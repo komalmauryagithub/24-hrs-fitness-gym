@@ -1,293 +1,300 @@
-# DARK MATTER — Elite Fitness (Phase 3 Full Stack Platform & Admin Nexus)
+# 24HRS FITNESS — 24/7 Premium Gym & Training Club
 
-> **"Redefine Your Human Threshold"**  
-> A futuristic, high-performance physical architecture gym platform. Engineered with an uncompromising black and electric lime aesthetic, metallic surfaces, high-contrast athletic imagery, secure PHP 8.3+ backend architecture, a relational MySQL 8+ database, and a fully functional, hardened **Admin Command Dashboard (Telemetry Nexus)**.
-
----
-
-## 1. Design System & Brand Identity (Preserved Across Public & Admin)
-
-- **Main Background**: `#080A0A`
-- **Secondary Surfaces**: `#111414`
-- **Elevated Card Surfaces**: `#131617` / `#161A1C` / `#1F2427`
-- **Electric Lime Accent**: `#B8FF2C` (Buttons, active badges, neon indicators, focus states)
-- **Metallic Silver**: `#BFC3C7` / `#E2E4E6` (Borders, metadata, secondary headers)
-- **Crisp White**: `#F5F5F5` (High-contrast typography)
-- **Controlled Glow**: `0 0 20px rgba(184, 255, 44, 0.28)`
-- **Typography**:
-  - Headings: **`Barlow Condensed`** (Bold athletic weights 700, 800, 900)
-  - Body Copy: **`Plus Jakarta Sans`** (Weights 400, 500, 600, 700)
-  - Technical / Telemetry tags: **`Space Mono`** (Weight 400, 700)
-- **Aesthetic**:
-  - Predominantly black, cinematic contrast, angled chamfered badges, metallic borders, zero generic rounded cards or distracting animations.
+> **"TRAIN HARDER. LIVE BETTER."**  
+> A high-performance, modern gym management platform and public website. Featuring a luxury obsidian-black and electric-neon-cyan theme matching the brand logo, a secure PHP 8.2+ backend architecture, a relational MySQL 8+ database (`fitness_gym`), an interactive online membership booking system, and a comprehensive **Admin Management Panel**.
 
 ---
 
-## 2. Phase 3 Admin Dashboard Architecture (`/admin`)
+## 1. Project Overview & Brand Identity
 
-The Admin Nexus provides real-time facility management, athlete leads processing, and dynamic database controls:
-
-1. **Authentication & Session Security (`admin/includes/auth.php`)**:
-   - Session-based authentication with `session_regenerate_id(true)` upon successful verification.
-   - Brute-force rate limiting: throttles IP addresses exceeding 5 failed login attempts per 15 minutes.
-   - Global Route Guard (`Auth::requireAuth()`) enforcing authentication on all dashboard routes.
-   - Secure logout destroying session cookies, session variables, and memory states.
-2. **Dashboard Overview (`admin/index.php`)**:
-   - Real-time telemetry counters (total enquiries, pending leads, applications, active protocols, master coaches, gallery assets).
-   - Recent activity feed showing latest 5 guest transmissions and latest 5 membership applications.
-   - Direct database quick-action toolbar.
-3. **Membership Plan Management (`admin/plans.php`)**:
-   - Full CRUD: Create, Edit, Activate/Deactivate toggle, and Delete with modal confirmation.
-   - Dynamic JSON feature list builder (newline-separated text to JSON array).
-   - Foreign-key protection preventing accidental deletion of plans with existing athlete applications.
-4. **Master Coach Management (`admin/trainers.php`)**:
-   - Full CRUD: Create, Edit, Publish/Unpublish toggle, and Delete with modal confirmation.
-   - Supports verified image uploads or existing image URLs.
-   - Dynamic credentials list editor and discipline categorization.
-5. **Training Protocol Management (`admin/programs.php`)**:
-   - Full CRUD: Create, Edit, Publish/Unpublish toggle, and Delete with modal confirmation.
-   - Intensity score tracking (1.0–5.0), burn ranges, coach ratios, target adaptations, and equipment loadouts.
-6. **Spatial Gallery Management (`admin/gallery.php`)**:
-   - Full CRUD: Image uploads or URLs, category filtering, taglines, active toggle, and deletion.
-   - Secure disk deletion for locally stored image files.
-7. **Guest Enquiries & Leads Management (`admin/enquiries.php`)**:
-   - Search by athlete name, email, phone, or keyword.
-   - Filter by status (`pending`, `verified`, `scheduled`, `completed`, `cancelled`) or inquiry type.
-   - Full modal inspection with client IP telemetry, user agent, date/slot preference, and message.
-   - In-line status update dropdown with instant CSRF verification.
-   - Pagination (15 records per page).
-8. **Membership Applications Management (`admin/applications.php`)**:
-   - Search by athlete legal name, email, phone, or protocol.
-   - Filter by status (`pending`, `verified`, `active`, `rejected`) and plan.
-   - Modal inspection showing billing commitment, monthly rate snapshot, and facility location.
-   - In-line status update dropdown with instant CSRF verification.
-   - Pagination (15 records per page).
-9. **Facility Settings & Telemetry (`admin/settings.php`)**:
-   - Gym platform name, headline manifesto, member caps, and active count.
-   - Concierge front-line telephone, secure email, physical address, and GPS coordinates.
-   - Direct encrypted WhatsApp concierge line.
-   - Operating hours (biometric 24/7 access vs. staffed reception).
-   - Social channels (Instagram, X / Twitter, YouTube).
-10. **Hardened File Upload Security (`admin/includes/uploader.php` & `uploads/`)**:
-    - Strict MIME-type inspection via PHP `FileInfo` (`image/jpeg`, `image/png`, `image/webp`, `image/gif`).
-    - Extension whitelisting and 5MB size ceiling constraint.
-    - Safe random filename generation (`bin2hex(random_bytes(16)) . '.' . $ext`).
-    - Dedicated `uploads/.htaccess` prohibiting Apache script execution (`php_flag engine off`, `Require all denied` for executables).
+* **Brand Name**: 24HRS FITNESS
+* **Tagline**: Train Harder. Live Better. (Open 24 Hours // 7 Days a Week)
+* **Design Theme**: Obsidian X Luxury Theme
+  * **Primary Background**: `#06080B` (Deep Obsidian Black)
+  * **Secondary Background**: `#0E1112` (Card and Section Charcoal)
+  * **Accent Color**: `#00E5FF` (Electric Neon Cyan — matching official brand logo)
+  * **Metallic Detail**: `#D1D5D4` / `#8F9493` (Subtle borders and secondary text)
+  * **Primary Text**: `#F5F5F5` (High-contrast crisp white)
+* **Typography**:
+  * Headings: **`Barlow Condensed`** (Bold athletic weights 700, 800, 900)
+  * Body Text: **`Plus Jakarta Sans`** (Clean, legible weights 400, 500, 600)
 
 ---
 
-## 3. Complete Folder & File Structure
+## 2. Key Features
 
-```
-c:\xampp\htdocs\Fitness gym\
-│
-├── .env                              # Local environment credentials & app settings
-├── .env.example                      # Safe environment template without secrets
-├── README.md                         # Project documentation, execution guide & test matrix
-│
-├── index.php                         # Home page (Dynamic programs, trainers, and plans from MySQL)
-├── membership.php                    # Membership plans (Dynamic plans, pricing calculations, apply modal)
-├── programs.php                      # Protocols page (Dynamic training protocols, inspection modal)
-├── trainers.php                      # Coaches page (Dynamic coach roster, specialty filters)
-├── about.php                         # Brand & spatial architecture (Dynamic facility gallery from DB)
-├── contact.php                       # Contact & join (Dynamic settings, multi-mode inquiry form)
-│
-├── admin/
-│   ├── index.php                     # Dashboard Overview (Live telemetry, stats, recent activity)
-│   ├── login.php                     # Secure Admin Authentication Portal (CSRF, brute-force limits)
-│   ├── logout.php                    # Secure Logout Handler (Session invalidation, cookie destruction)
-│   ├── plans.php                     # Membership Plans Management (CRUD, toggle, delete confirmation)
-│   ├── trainers.php                  # Master Coaches Management (CRUD, headshot upload, publish toggle)
-│   ├── programs.php                  # Training Protocols Management (CRUD, intensity specs, upload)
-│   ├── gallery.php                   # Facility Gallery Management (CRUD, secure upload, active toggle)
-│   ├── enquiries.php                 # Guest Enquiries Management (Search, filter, modal inspect, status update)
-│   ├── applications.php              # Membership Applications Management (Search, filter, status update)
-│   ├── settings.php                  # Facility & Telemetry Settings (Contact, address, hours, socials)
-│   └── includes/
-│       ├── auth.php                  # Session authentication guard & flash messaging
-│       ├── header.php                # Admin layout header, navigation sidebar, dynamic badge counters
-│       ├── footer.php                # Admin layout footer, global confirmation modal, mobile navigation
-│       └── uploader.php              # Secure image uploader helper with MIME verification
-│
-├── api/
-│   ├── csrf_token.php                # GET endpoint providing active session CSRF token
-│   ├── enquiry.php                   # POST endpoint for VIP passes, tours, inquiries, consultations
-│   └── membership_apply.php          # POST endpoint validating plan slug, calculating totals & inserting application
-│
-├── includes/
-│   ├── Env.php                       # Lightweight .env parser with type-casting
-│   ├── Database.php                  # PDO singleton with prepared statements & credential-safe error isolation
-│   ├── Security.php                  # Session hardening, CSRF verification, honeypots, rate limiter, sanitizers
-│   ├── helpers.php                   # Global XSS escaping helper function e()
-│   ├── header.php                    # Shared public header component with active route detection & CSRF
-│   ├── footer.php                    # Shared public footer component with admin portal access link
-│   └── modals.php                    # Dynamic modal component (VIP passes, consultations, membership apply)
-│
-├── uploads/
-│   ├── .htaccess                     # Security rule disabling script execution inside uploads
-│   ├── index.html                    # Directory browsing prevention
-│   ├── gallery/                      # Uploaded gallery images
-│   └── trainers/                     # Uploaded coach headshots
-│
-├── scripts/
-│   └── create_admin.php              # Safe CLI utility to generate / reset admin credentials
-│
-├── database/
-│   ├── dark_matter.sql               # Unified DDL schema and complete demo seed data
-│   ├── schema.sql                    # Clean DDL table definitions with foreign keys and indexes
-│   └── seed.sql                      # Athletic seed records (plans, coaches, protocols, gallery, settings)
-│
-├── css/
-│   ├── style.css                     # Public design tokens, typography, layout, sticky navbar, mobile drawer
-│   ├── components.css                # Cards, badges, buttons, modals, toasts, pricing tables, form inputs
-│   └── admin.css                     # Dedicated responsive admin dashboard stylesheet
-│
-├── js/
-│   ├── main.js                       # Public navigation, sticky header, stat counters, toasts
-│   ├── membership.js                 # Monthly/annual billing calculation, dynamic database plan checkout
-│   ├── programs.js                   # Interactive category filters & dynamic protocol inspection modal
-│   ├── gallery.js                    # Filterable facility gallery with full-screen image lightbox
-│   └── forms.js                      # Asynchronous AJAX fetch(), CSRF injection, honeypot, DB feedback banners
-│
-└── assets/
-    └── images/
-        ├── logo.svg                  # Brand geometric diamond emblem & typography
-        └── favicon.svg               # SVG brand favicon
+### 🌟 Public Website
+1. **Homepage (`index.php`)**:
+   - Hero section with cinematic fitness imagery, direct CTA buttons (`View Membership Plans`, `Get Free 1-Day Pass`, `Book Gym Tour`).
+   - Key stats counter (25,000 Sq Ft floor, 100+ modern machines, 98% satisfaction, 24/7 access).
+   - About us showcase and core pillars.
+   - Workout programs preview with direct inspection modal.
+   - Gym advantage comparison (heavy weights, body composition scans, steam & sauna, 24/7 keycard access).
+   - Certified coach roster with consultation booking.
+   - Membership pricing cards with monthly/annual billing toggle and Rupee (`₹`) pricing.
+   - Genuine member reviews & ratings.
+2. **Workout Programs (`programs.php`)**:
+   - Filterable program tabs: **Strength & Muscle**, **Cardio & Fat Loss**, **Steam & Sauna Recovery**, **CrossFit & Boxing**.
+   - Gym facilities & zones breakdown.
+   - Weekly group workout class timetable (Morning, Afternoon, Evening slots).
+   - Interactive Program Details modal.
+3. **Membership Plans (`membership.php`)**:
+   - 3 dynamic plans: **Starter** (₹1,500/mo), **Pro Fitness** (₹2,500/mo), **Elite VIP** (₹4,500/mo).
+   - Monthly / Annual toggle (20% discount calculation).
+   - Detailed side-by-side feature comparison table.
+   - Common gym FAQ accordion.
+4. **Personal Trainers (`trainers.php`)**:
+   - Certified personal coaches roster with disciplines and bios.
+   - Filter by specialty (Strength, Fat Loss, CrossFit, Mobility).
+   - Direct "Book Free Consultation" modal.
+5. **About & Gallery (`about.php`)**:
+   - Gym history, philosophy, and equipment standards.
+   - Categorized facility photo gallery (Weights, Steam & Sauna, Turf, Cardio) with full-screen lightbox.
+6. **Contact & Location (`contact.php`)**:
+   - Operating hours, email, physical gym address with interactive Google Maps link.
+   - Direct **Call Now** (`+91 98765 43210`) and **WhatsApp Chat** buttons.
+   - Multi-mode inquiry form: Free 1-Day Trial Pass, Book Gym Tour, General Inquiry.
+
+---
+
+### 🛡️ Online Membership & Booking System
+* **Free 1-Day Pass Modal**: Quick trial pass generation with instant confirmation.
+* **Gym Tour Booking**: Schedule in-person tour with preferred date and time slot.
+* **Trainer Consultation Booking**: Direct session request with selected coach.
+* **Online Membership Checkout (`/api/membership_apply.php`)**:
+  - Plan selection with live price calculation.
+  - Customer personal details & joining date.
+  - Flexible payment options:
+    - **Pay at Gym Reception** (Cash / UPI / Card on arrival)
+    - **Pay Online Now** (UPI / Credit & Debit Card / NetBanking)
+  - Instant booking confirmation modal with reference code (e.g. `MBR-2026-XXXX`).
+
+---
+
+### ⚡ Admin Management Panel (`/admin`)
+Accessible via `http://localhost/Fitness%20gym/admin/` with secure session authentication:
+
+1. **Dashboard Overview (`admin/index.php`)**:
+   - Real-time KPI summary: Total Enquiries, Total Members, Active Members, and Revenue (in ₹).
+   - Recent customer enquiries and member applications feeds.
+   - Quick-action shortcuts.
+2. **Members Management (`admin/members.php`)**:
+   - Member profiles with auto-generated Membership IDs.
+   - Membership plan details, joining date, and expiry date.
+   - Live status badges: **Active**, **Expired**, **Pending**.
+   - Payment records & fee collection status.
+3. **Membership Plans (`admin/plans.php`)**:
+   - Full CRUD: Add, edit, toggle active status, and delete plans.
+   - Monthly and annual pricing in INR (`₹`), feature list editor.
+   - Deletion safety preventing removal of plans with active members.
+4. **Trainer Team (`admin/trainers.php`)**:
+   - Full CRUD: Add coach profiles, upload photos, specify certifications, specialties, and social handles.
+5. **Workout Programs (`admin/programs.php`)**:
+   - Full CRUD: Add programs, set target categories, intensity ratings, durations, and weekly schedules.
+6. **Gym Gallery (`admin/gallery.php`)**:
+   - Full CRUD: Upload facility photos, organize by zone category, edit descriptions, toggle display.
+7. **Customer Enquiries (`admin/enquiries.php`)**:
+   - View Free 1-Day Pass leads and Gym Tour requests.
+   - Search by name, email, or phone.
+   - Filter by status (`pending`, `contacted`, `completed`, `cancelled`).
+   - One-click status updates with CSRF security.
+8. **Member Applications (`admin/applications.php`)**:
+   - Review online membership joining requests.
+   - View selected payment mode (Reception vs Online).
+   - Approve / Activate memberships with instant status updates.
+9. **Website Settings (`admin/settings.php`)**:
+   - Update gym contact phone, official email, address, and Google Maps coordinates.
+   - Update WhatsApp concierge number and social media links.
+   - Configure gym opening hours.
+
+---
+
+## 3. Technology Stack & Security
+
+| Layer | Technology | Details |
+|---|---|---|
+| **Backend** | PHP 8.2+ / 8.3 | Object-oriented PDO, modular components, strict typing |
+| **Database** | MySQL 8.0+ | Relational schema (`fitness_gym`), foreign keys, indexed lookups |
+| **Frontend** | HTML5, CSS3, ES6+ JS | Vanilla JavaScript (no heavy frameworks), CSS variables, responsive design |
+| **Server** | Apache (XAMPP / Docker) | Clean URL rewrites (`.htaccess`), security headers, Gzip compression |
+| **Security** | CSRF, Session Hardening | `session_regenerate_id()`, prepared statements (Zero SQLi), honeypots |
+| **File Uploads** | PHP FileInfo MIME Guard | Strict MIME check (`jpeg`, `png`, `webp`), execution disabled in `uploads/` |
+
+---
+
+## 4. Local Setup Instructions (XAMPP on Windows)
+
+### Prerequisites
+* [XAMPP](https://www.apachefriends.org/) installed with **Apache** and **MySQL**.
+* Web root directory: `C:\xampp\htdocs\Fitness gym`
+
+### Step 1: Start Apache and MySQL
+Open the **XAMPP Control Panel** and click **Start** next to:
+- **Apache** (Port 80 / 443)
+- **MySQL** (Port 3306)
+
+### Step 2: Set Up Database (`fitness_gym`)
+1. Open your browser and navigate to **phpMyAdmin**: [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+2. Create a new database named:
+   ```sql
+   fitness_gym
+   ```
+3. Click on the newly created `fitness_gym` database, go to the **Import** tab, and select:
+   ```
+   C:\xampp\htdocs\Fitness gym\database\fitness_gym.sql
+   ```
+4. Click **Import** (or **Go**) at the bottom. All 11 tables and clean initial data will be loaded automatically.
+
+*(Alternatively, run via MySQL CLI:)*
+```bash
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS fitness_gym CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+mysql -u root -p fitness_gym < "database/fitness_gym.sql"
 ```
 
----
-
-## 4. Local Setup & Admin Provisioning Instructions
-
-### Step 1: Configure Environment Variables
-Copy `.env.example` to `.env` in the project root:
+### Step 3: Configure Environment File (`.env`)
+The `.env` file in the project root is pre-configured for local XAMPP:
 ```ini
-APP_ENV=local
+APP_ENV=development
 APP_DEBUG=false
+APP_NAME="24HRS FITNESS — 24/7 Premium Gym"
 APP_URL=http://localhost/Fitness%20gym
 
 # Database Credentials
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_NAME=dark_matter_gym
+DB_NAME=fitness_gym
 DB_USER=root
-DB_PASS=root
+DB_PASS=
 DB_CHARSET=utf8mb4
+
+# Security Tokens
+SESSION_SECRET=e7b8f94c1a2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f
+RATE_LIMIT_PER_MINUTE=10
+RATE_LIMIT_WINDOW_SECONDS=300
+HONEYPOT_FIELD=dm_telemetry_check
 ```
 
-### Step 2: Import MySQL Database
-```bash
-mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS dark_matter_gym CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-mysql -u root -p dark_matter_gym < database/dark_matter.sql
-```
+### Step 4: Access the Website & Admin Panel
 
-### Step 3: Provision or Reset Admin Account via CLI
-Use the secure administrative CLI tool:
-```bash
-php scripts/create_admin.php <username> <email> <password> [role]
-```
-*Example:*
-```bash
-php scripts/create_admin.php darkmatter_admin admin@darkmatter-fitness.com "DarkMatter#2026!Elite" superadmin
-```
-*(You can also run `php scripts/create_admin.php` without arguments to enter credentials through interactive CLI prompts.)*
+* 🌐 **Public Website**:
+  [http://localhost/Fitness%20gym/](http://localhost/Fitness%20gym/)
 
-### Step 4: Access Application
-1. **Public Website**: Visit `http://localhost/Fitness%20gym/` (or `http://127.0.0.1:8000/`)
-2. **Admin Command Nexus**: Visit `http://localhost/Fitness%20gym/admin/login.php` (or click "Nexus Admin" in the website footer)
+* 🔐 **Admin Management Panel**:
+  [http://localhost/Fitness%20gym/admin/](http://localhost/Fitness%20gym/admin/)
+
+  **Default Admin Credentials**:
+  * **Email**: `fitness_gym@gmail.com`
+  * **Password**: `fitness123`
 
 ---
 
-## 5. Verified Feature Checklist (Phase 3 Test Results)
+## 5. Project Directory Structure
 
-Automated test suites (`scratch/admin_test_suite.php` and `scratch/http_test.php`) executed **47 tests** with **0 failures**:
-
-- [x] **Route Guard Protection**: Unauthenticated requests to all 8 admin routes (`index.php`, `plans.php`, `trainers.php`, `programs.php`, `gallery.php`, `enquiries.php`, `applications.php`, `settings.php`) are blocked and redirected to `login.php`.
-- [x] **Session Authentication**:
-  - Invalid passkey rejected with alert banner.
-  - Missing CSRF token halted.
-  - Successful authentication regenerates session ID via `session_regenerate_id(true)` to prevent fixation attacks.
-- [x] **Dashboard Telemetry**: Displays real-time counts for guest transmissions, applications, protocols, and coaches, with fast-action shortcuts and recent activity feeds.
-- [x] **Membership Plan CRUD**:
-  - Created experimental plan `TITAN PROTOCOL` via POST with CSRF.
-  - Modified prices and feature checklists; verified in MySQL.
-  - Toggled active status between published and unpublished.
-  - Safely verified foreign-key constraints before deletion.
-- [x] **Master Coach CRUD**:
-  - Enlisted coach profile with image upload and credentials.
-  - Updated role and discipline specialties.
-  - Toggled publish status; deleted with confirmation.
-- [x] **Training Protocol CRUD**:
-  - Forged protocol with intensity ratings (4.9/5.0), target adaptations, and equipment loadouts.
-  - Verified persistence in MySQL and deleted with confirmation.
-- [x] **Spatial Gallery Management**:
-  - Added facility assets with MIME-checked file upload and safe URL validation.
-  - Verified disk cleanup on deletion.
-- [x] **Guest Enquiries Management**:
-  - Searched by athlete name and verified instant query filtering.
-  - Filtered by status (`pending`, `verified`, `scheduled`, etc.).
-  - Inspected full message, IP address, and user agent telemetry via modal.
-  - Updated status in real-time with CSRF token.
-- [x] **Membership Applications Management**:
-  - Searched and filtered by protocol and status.
-  - Inspected athlete rate snapshot and billing commitment.
-  - Updated application status in MySQL.
-- [x] **Facility Settings Management**:
-  - Updated telephone, email, physical coordinates, and operating hours; verified in `site_settings`.
-- [x] **Secure Logout**: Terminated session, cleared session cookies, and confirmed subsequent access is revoked.
+```
+c:\xampp\htdocs\Fitness gym\
+│
+├── .env                              # Environment credentials & app configuration (ignored in Git)
+├── .env.example                      # Safe environment template without secrets
+├── .gitignore                        # Git exclusion rules (secrets, OS files, uploads, logs)
+├── .htaccess                         # Apache URL routing, security headers & Gzip compression
+├── README.md                         # Full project documentation & execution guide
+│
+├── index.php                         # Home page (Dynamic programs, trainers, plans from MySQL)
+├── programs.php                      # Workout programs & gym zones (Filter tabs & schedule timetable)
+├── membership.php                    # Membership plans & pricing (Monthly/annual toggle, apply modal)
+├── trainers.php                      # Personal coaches roster (Specialty filter, consultation booking)
+├── about.php                         # Gym story & facility gallery (Dynamic photos with lightbox)
+├── contact.php                       # Contact info, Google Maps, Call/WhatsApp, 1-Day Pass form
+├── 404.php                           # Custom branded 404 error page
+├── 500.php                           # Custom branded 500 server error page
+├── healthz.php                       # Healthcheck endpoint
+│
+├── admin/
+│   ├── index.php                     # Admin Dashboard (KPI stats, revenue counter, recent activity)
+│   ├── login.php                     # Secure Admin Login (CSRF, brute-force rate limiting)
+│   ├── logout.php                    # Secure Admin Logout (Session invalidation & cookie cleanup)
+│   ├── members.php                   # Member Management (Profiles, membership IDs, active/expired status)
+│   ├── plans.php                     # Membership Plans CRUD (Add, edit, toggle, delete plans in ₹)
+│   ├── trainers.php                  # Trainer Team CRUD (Add, edit, upload photo, specialty tags)
+│   ├── programs.php                  # Workout Programs CRUD (Categories, intensity, duration, schedule)
+│   ├── gallery.php                   # Gym Gallery CRUD (Upload facility photos, categories, status)
+│   ├── enquiries.php                 # Customer Enquiries (1-Day pass leads, tour requests, status update)
+│   ├── applications.php              # Membership Applications (Online join requests, payment mode review)
+│   ├── settings.php                  # Gym Settings (Phone, email, address, WhatsApp, social links)
+│   └── includes/
+│       ├── auth.php                  # Session authentication guard & flash messaging
+│       ├── header.php                # Admin header, navigation sidebar, dynamic badge counters
+│       ├── footer.php                # Admin footer, confirmation modals
+│       └── uploader.php              # Secure image uploader helper with MIME verification
+│
+├── api/
+│   ├── csrf_token.php                # Endpoint providing active session CSRF token
+│   ├── enquiry.php                   # Endpoint for 1-Day pass, gym tours, and general inquiries
+│   └── membership_apply.php          # Endpoint for online membership checkout & applications
+│
+├── includes/
+│   ├── Database.php                  # PDO singleton with prepared statements & error handling
+│   ├── Env.php                       # Lightweight .env parser
+│   ├── Security.php                  # CSRF protection, session hardening, honeypot, rate limiting
+│   ├── helpers.php                   # Global XSS escaping helper function e()
+│   ├── header.php                    # Shared public header with navigation and CSRF tokens
+│   ├── footer.php                    # Shared public footer with WhatsApp link and admin portal button
+│   └── modals.php                    # Shared modal dialogs (Pass, tour, join checkout, consultation)
+│
+├── database/
+│   └── fitness_gym.sql               # Clean MySQL database schema and seed data
+│
+├── css/
+│   ├── style.css                     # Design tokens, typography, navbar, animations
+│   ├── components.css                # Cards, badges, buttons, modals, pricing tables
+│   └── admin.css                     # Dedicated responsive admin dashboard stylesheet
+│
+├── js/
+│   ├── main.js                       # Navbar toggle, scroll effects, toast notifications
+│   ├── membership.js                 # Monthly/annual billing calculations, plan selection
+│   ├── programs.js                   # Category filtering & program inspection modal
+│   ├── gallery.js                    # Photo category filters & image lightbox
+│   └── forms.js                      # AJAX form submissions, CSRF injection, feedback banners
+│
+├── assets/
+│   └── images/                       # Brand logo, icons, and hero photography
+│
+├── uploads/                          # User-uploaded images (protected by .htaccess)
+│   ├── .htaccess                     # Script execution prevention rule
+│   ├── gallery/                      # Uploaded gallery images
+│   └── trainers/                     # Uploaded trainer headshots
+│
+└── scripts/
+    ├── backup.php                    # Automated MySQL database backup utility
+    ├── restore.php                   # Database restore utility from backup archive
+    └── create_admin.php              # Safe CLI script to create or reset admin credentials
+```
 
 ---
 
-## 6. Production Deployment Guide (PHP 8.3 + MySQL 8+)
+## 6. Maintenance & Backup Commands
 
-### Architecture Overview
-- **Web Runtime**: Docker Container (`php:8.3-apache-bookworm`) with Apache mod_rewrite, headers, deflate, expires, and opcache.
-- **Hosting Platform**: **Render** (using Docker runtime via `render.yaml`) or any container-based cloud (AWS ECS, Google Cloud Run, DigitalOcean App Platform).
-- **Persistent Database**: Dedicated external MySQL 8.0+ service (**Aiven for MySQL**, PlanetScale, or Railway MySQL) with mandatory TLS/SSL encryption. *SQLite and JSON databases are strictly prohibited.*
-- **Persistent Uploads**: Render Persistent Disk mounted at `/var/www/html/uploads` or S3/R2-compatible object storage via native SigV4 (`STORAGE_DRIVER=s3`).
-
-### Local Production Emulation via Docker Compose
-To run a complete production-identical containerized stack locally:
+### Create a Database Backup
+Run the backup script via terminal or Command Prompt:
 ```bash
-# Build and run web + MySQL 8 in background
-docker compose up -d --build
-
-# View container logs
-docker compose logs -f
-
-# Verify zero-secret healthcheck
-curl -i http://localhost:8080/healthz.php
-
-# Stop stack
-docker compose down
-```
-
-### Automated Database Migrations & Initial Admin Provisioning
-The container entrypoint (`docker-entrypoint.sh`) runs `scripts/migrate.php` on startup:
-```bash
-# Run migrations manually on CLI:
-php scripts/migrate.php
-
-# Or with automatic admin provisioning:
-ADMIN_INIT_USERNAME=darkmatter_admin \
-ADMIN_INIT_EMAIL=admin@darkmatter-fitness.com \
-ADMIN_INIT_PASSWORD="YourSecurePasswordHere" \
-php scripts/migrate.php
-```
-
-### Database Backup & Restore Utilities
-Automated database backup script produces compressed `.sql.gz` archives:
-```bash
-# Create compressed backup:
 php scripts/backup.php
+```
+*Creates a timestamped compressed backup in the `backups/` folder.*
 
-# Restore from backup archive:
+### Restore a Database Backup
+```bash
 php scripts/restore.php backups/darkmatter_backup_YYYY-MM-DD_HHMMSS.sql.gz
 ```
 
-### Production Verification Test Suite
-Run the 38-assertion production readiness test suite:
+### Create a New Admin User via CLI
 ```bash
-php scratch/prod_verification_test.php
-# Result: 38 PASSED, 0 FAILED (100% Pass Rate)
+php scripts/create_admin.php username email@example.com "YourPasswordHere" superadmin
 ```
+
+---
+
+## 7. License & Credits
+
+* **Project**: 24HRS FITNESS
+* **Engineered for**: High-Performance Fitness Centers & Gym Owners
+* **Theme**: Obsidian X Luxury Theme
