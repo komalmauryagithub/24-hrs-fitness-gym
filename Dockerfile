@@ -14,11 +14,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install operating system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
-    libjpeg-dev \
+    libjpeg62-turbo-dev \
     libwebp-dev \
     libfreetype6-dev \
     libzip-dev \
     libicu-dev \
+    libonig-dev \
     ca-certificates \
     curl \
     git \
@@ -58,9 +59,17 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN mkdir -p /var/www/html/uploads/gallery \
              /var/www/html/uploads/trainers \
              /var/www/html/backups \
+             /var/www/html/certs \
     && chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
     && chmod -R 775 /var/www/html/uploads /var/www/html/backups
+
+# Ensure Aiven CA certificate has safe read permissions and is registered in OS trust store
+RUN if [ -f /var/www/html/certs/ca.pem ]; then \
+        chmod 644 /var/www/html/certs/ca.pem && \
+        cp /var/www/html/certs/ca.pem /usr/local/share/ca-certificates/aiven-ca.crt && \
+        update-ca-certificates; \
+    fi
 
 # Expose standard web port
 EXPOSE 80
