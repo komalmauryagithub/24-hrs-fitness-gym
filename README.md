@@ -52,7 +52,7 @@
    - Categorized facility photo gallery (Weights, Steam & Sauna, Turf, Cardio) with full-screen lightbox.
 6. **Contact & Location (`contact.php`)**:
    - Operating hours, email, physical gym address with interactive Google Maps link.
-   - Direct **Call Now** (`+91 98765 43210`) and **WhatsApp Chat** buttons.
+   - Direct **Call Now** (`+91 99201 20785`) and **WhatsApp Chat** buttons.
    - Multi-mode inquiry form: Free 1-Day Trial Pass, Book Gym Tour, General Inquiry.
 
 ---

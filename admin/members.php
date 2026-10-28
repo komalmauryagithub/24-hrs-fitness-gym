@@ -826,7 +826,7 @@ require_once __DIR__ . '/includes/header.php';
           </div>
           <div class="adm-form-group">
             <label class="adm-label">Phone Number <span class="text-lime">*</span></label>
-            <input type="text" name="phone" class="adm-input" required placeholder="e.g. 9876543210">
+            <input type="text" name="phone" class="adm-input" required placeholder="e.g. 9920120785">
           </div>
         </div>
 

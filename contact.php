@@ -26,10 +26,10 @@ try {
 }
 
 $siteAddress = $settings['address'] ?? 'Plot 42, Main Commercial Avenue, City Center, Mumbai, MH 400001';
-$sitePhone = $settings['contact_phone'] ?? '+91 98765 43210';
+$sitePhone = $settings['contact_phone'] ?? '+91 99201 20785';
 $siteEmail = $settings['contact_email'] ?? 'info@fitnessgym.com';
 $geoCoords = $settings['geo_coordinates'] ?? '19.0760° N, 72.8777° E';
-$waNumber = $settings['whatsapp_number'] ?? '919876543210';
+$waNumber = $settings['whatsapp_number'] ?? '919920120785';
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -195,7 +195,7 @@ require_once __DIR__ . '/includes/header.php';
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-label" for="contactPhone">Phone Number <span class="req">*</span></label>
-                      <input type="tel" id="contactPhone" name="phone" class="form-control-dm" placeholder="+91 98765 43210" required>
+                      <input type="tel" id="contactPhone" name="phone" class="form-control-dm" placeholder="+91 99201 20785" required>
                       <div class="invalid-feedback-msg">Phone number required for confirmation SMS.</div>
                     </div>
                   </div>

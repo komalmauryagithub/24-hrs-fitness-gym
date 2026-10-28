@@ -46,7 +46,7 @@ use DarkMatter\Security;
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-label" for="qpPhone">Phone Number <span class="req">*</span></label>
-                <input type="tel" id="qpPhone" name="phone" class="form-control-dm" placeholder="e.g. 9876543210" required>
+                <input type="tel" id="qpPhone" name="phone" class="form-control-dm" placeholder="e.g. 9920120785" required>
                 <div class="invalid-feedback-msg">Valid phone number is required.</div>
               </div>
             </div>
@@ -114,7 +114,7 @@ use DarkMatter\Security;
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-label" for="mbrPhone">Phone Number <span class="req">*</span></label>
-                <input type="tel" id="mbrPhone" name="phone" class="form-control-dm" placeholder="e.g. 9876543210" required>
+                <input type="tel" id="mbrPhone" name="phone" class="form-control-dm" placeholder="e.g. 9920120785" required>
                 <div class="invalid-feedback-msg">Valid phone number is required.</div>
               </div>
             </div>
@@ -389,7 +389,7 @@ use DarkMatter\Security;
 
           <div class="form-group">
             <label class="form-label" for="consultClientPhone">Phone Number <span class="req">*</span></label>
-            <input type="tel" id="consultClientPhone" name="phone" class="form-control-dm" placeholder="e.g. 9876543210" required>
+            <input type="tel" id="consultClientPhone" name="phone" class="form-control-dm" placeholder="e.g. 9920120785" required>
             <div class="invalid-feedback-msg">Valid phone number is required.</div>
           </div>
 

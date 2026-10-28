@@ -560,7 +560,7 @@ function initWhatsAppCTAs() {
   whatsappBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const phone = btn.getAttribute('data-wa-phone') || '919876543210';
+      const phone = btn.getAttribute('data-wa-phone') || '919920120785';
       const message = encodeURIComponent('Hello 24HRS FITNESS! I would like to inquire about gym membership plans and facilities.');
       const waUrl = `https://wa.me/${phone}?text=${message}`;
 
@@ -729,7 +729,7 @@ function initMembershipCheckoutForm() {
 
         if (waBtn) {
           const waText = encodeURIComponent(`Hello 24HRS FITNESS! I have completed my membership application for ${result.data?.plan_name || 'Gym Membership'}. My Member ID is ${memberId}.`);
-          waBtn.href = `https://wa.me/919876543210?text=${waText}`;
+          waBtn.href = `https://wa.me/919920120785?text=${waText}`;
         }
 
         // Open Success Modal

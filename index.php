@@ -39,7 +39,7 @@ require_once __DIR__ . '/includes/header.php';
     "description": "A premium 24/7 gym equipped with modern strength machines, cardio zones, steam sauna, and certified personal trainers.",
     "url": "<?= e($canonicalUrl) ?>",
     "logo": "<?= e($ogImage) ?>",
-    "telephone": "+91-98765-43210",
+    "telephone": "+91-99201-20785",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Plot 42, Main Commercial Avenue, City Center",

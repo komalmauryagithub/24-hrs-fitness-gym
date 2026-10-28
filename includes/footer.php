@@ -22,10 +22,10 @@ try {
     $settings = [];
 }
 
-$siteAddress = $settings['address'] ?? '400 Obsidian Boulevard, District 7, Metropolis, NY 10001';
-$sitePhone = $settings['contact_phone'] ?? '+1 (555) 019-8234';
-$siteEmail = $settings['contact_email'] ?? 'concierge@darkmatter-fitness.com';
-$siteWhatsapp = $settings['whatsapp_number'] ?? '15550198234';
+$siteAddress = $settings['address'] ?? 'Plot 42, Main Commercial Avenue, City Center, Mumbai, MH 400001';
+$sitePhone = $settings['contact_phone'] ?? '+91 99201 20785';
+$siteEmail = $settings['contact_email'] ?? 'contact@24hrsfitness.com';
+$siteWhatsapp = $settings['whatsapp_number'] ?? '919920120785';
 ?>
   <!-- ================= SITE FOOTER ================= -->
   <footer class="site-footer">

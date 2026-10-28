@@ -170,7 +170,7 @@ require_once __DIR__ . '/includes/header.php';
           id="contact_phone" 
           name="settings[contact_phone]" 
           class="adm-input" 
-          value="<?= e($settings['contact_phone'] ?? '+1 (555) 019-8234') ?>"
+          value="<?= e($settings['contact_phone'] ?? '+91 99201 20785') ?>"
         >
       </div>
       <div>
@@ -190,8 +190,8 @@ require_once __DIR__ . '/includes/header.php';
           id="whatsapp_number" 
           name="settings[whatsapp_number]" 
           class="adm-input" 
-          placeholder="e.g. 919876543210"
-          value="<?= e($settings['whatsapp_number'] ?? '15550198234') ?>"
+          placeholder="e.g. 919920120785"
+          value="<?= e($settings['whatsapp_number'] ?? '919920120785') ?>"
         >
       </div>
     </div>
