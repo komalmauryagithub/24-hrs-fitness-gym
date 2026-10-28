@@ -1,0 +1,94 @@
+# ==============================================================================
+# DARK MATTER — ELITE FITNESS
+# Apache Web Server Production Configuration
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes +FollowSymLinks
+
+# Set Default Charset
+AddDefaultCharset UTF-8
+
+# Custom Error Pages
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Enforce HTTPS in production environments behind cloud reverse proxies or native SSL
+    # Checks standard HTTPS as well as X-Forwarded-Proto header
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Block access to sensitive and configuration files
+    RewriteRule ^\.env.*$ - [F,L,NC]
+    RewriteRule ^composer\.(json|lock)$ - [F,L,NC]
+    RewriteRule ^Dockerfile$ - [F,L,NC]
+    RewriteRule ^docker-compose.*$ - [F,L,NC]
+    RewriteRule ^render\.yaml$ - [F,L,NC]
+</IfModule>
+
+# Block hidden files, git files, SQL dumps, markdown, and log files
+<FilesMatch "(^\..*|\.sql|\.sql\.gz|\.log|\.md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Production Security Headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+
+    # Enforce HSTS for HTTPS connections
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on' || %{HTTP:X-Forwarded-Proto} == 'https'"
+</IfModule>
+
+# Performance Compression (mod_deflate)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Static Asset Browser Caching (mod_expires)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Disable PHP Error display in production web requests
+<IfModule mod_php.c>
+    php_flag display_errors off
+    php_flag display_startup_errors off
+    php_flag log_errors on
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag display_errors off
+    php_flag display_startup_errors off
+    php_flag log_errors on
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag display_errors off
+    php_flag display_startup_errors off
+    php_flag log_errors on
+</IfModule>

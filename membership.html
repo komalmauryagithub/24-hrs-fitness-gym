@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Plans & Protocols — DARK MATTER Elite Fitness</title>
+  <meta name="description" content="Transparent, uncompromising membership protocols at Dark Matter. Choose between Initiate, Obsidian, and Black Matter tiers with 24/7 access and recovery suites.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5 Grid & Utilities -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container-custom nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Dark Matter Home">
+        <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness Logo" width="220" height="44">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="membership.html" class="nav-link active">Membership</a>
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="about.html" class="nav-link">About & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-dm btn-outline-lime btn-sm">
+          <span>Book Tour</span>
+        </a>
+        <button type="button" class="btn-dm btn-lime btn-sm" data-open-modal="quickPassModal">
+          <span>Claim VIP Pass</span>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Panel -->
+  <div class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <img src="assets/images/logo.svg" alt="Dark Matter" width="160">
+        <div class="status-beacon">
+          <span class="beacon-dot"></span>
+          <span>24/7 OPEN</span>
+        </div>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link">Training Protocols</a>
+        <a href="membership.html" class="nav-link active">Membership Plans</a>
+        <a href="trainers.html" class="nav-link">Master Coaches</a>
+        <a href="about.html" class="nav-link">Ethos & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & Join</a>
+      </nav>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <button type="button" class="btn-dm btn-lime w-100" data-open-modal="quickPassModal">
+        <span>Claim Free Trial Pass</span>
+      </button>
+      <a href="contact.html" class="btn-dm btn-metallic w-100">
+        <span>Schedule Tour</span>
+      </a>
+      <div class="text-center text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">
+        400 OBSIDIAN BLVD • DISTRICT 7
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+
+    <!-- ================= SUBPAGE HERO ================= -->
+    <section class="subpage-hero">
+      <div class="container-custom">
+        <span class="mono-tag mb-2">TIER SPECIFICATIONS</span>
+        <h1 class="display-title mb-3">MEMBERSHIP PROTOCOLS</h1>
+        <p class="lead text-silver" style="max-width: 680px;">
+          Uncompromised standards. Zero crowded wait times. Transparent monthly or annual billing with no hidden initiation traps. Select the protocol engineered for your athletic trajectory.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= BILLING TOGGLE & PRICING CARDS ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+
+        <!-- Billing Toggle Component -->
+        <div class="billing-toggle-container">
+          <span id="labelMonthly" class="billing-label active">MONTHLY BILLING</span>
+          <div id="billingSwitch" class="switch-pill" role="switch" aria-checked="false" aria-label="Toggle annual billing discount">
+            <div class="switch-knob"></div>
+          </div>
+          <span id="labelAnnual" class="billing-label">ANNUAL PRIVILEGE</span>
+          <span class="discount-badge">SAVE 20%</span>
+        </div>
+
+        <!-- 3 Tier Cards Row -->
+        <div class="row g-4 justify-content-center">
+
+          <!-- Plan 1: Initiate -->
+          <div class="col-lg-4 col-md-6">
+            <div class="dm-card pricing-card">
+              <div>
+                <span class="plan-tier-label">PROTOCOL 01</span>
+                <h2 class="card-title mb-1">INITIATE</h2>
+                <p class="text-muted" style="font-size: 0.88rem;">Essential unrestricted access to the calibrated lifting floor and cardio suite.</p>
+                
+                <div class="plan-price-block">
+                  <span class="price-currency">$</span>
+                  <span id="price-initiate" class="price-amount">79</span>
+                  <span class="price-period">/ month</span>
+                  <div id="note-initiate" class="text-muted mt-2" style="font-size: 0.8rem;">Billed monthly • Cancel anytime with 30-day notice</div>
+                </div>
+
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Full 24/7 Biometric Gym Access</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Eleiko Olympic Platforms & Dumbbells</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Woodway & Concept2 Metabolic Equipment</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Mobile Locker & Keyless Gate App</span>
+                  </div>
+                  <div class="feature-item muted">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span>Infrared Saunas & Cold Plunge Spa</span>
+                  </div>
+                  <div class="feature-item muted">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span>Monthly InBody 770 Telemetry Scan</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-dm btn-metallic w-100 btn-select-plan" data-plan="initiate" data-plan-name="INITIATE PROTOCOL">
+                <span>SELECT INITIATE</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plan 2: Obsidian (Highlighted) -->
+          <div class="col-lg-4 col-md-6">
+            <div class="dm-card pricing-card dm-card-highlight">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="plan-tier-label text-lime">PROTOCOL 02 // MOST SELECTED</span>
+                  <span class="discount-badge">POPULAR</span>
+                </div>
+                <h2 class="card-title mb-1 text-white">OBSIDIAN</h2>
+                <p class="text-silver" style="font-size: 0.88rem;">The ultimate performance standard. Full iron floor and unlimited bio-thermal recovery.</p>
+                
+                <div class="plan-price-block">
+                  <span class="price-currency text-lime">$</span>
+                  <span id="price-obsidian" class="price-amount text-lime">149</span>
+                  <span class="price-period">/ month</span>
+                  <div id="note-obsidian" class="text-lime mt-2" style="font-size: 0.8rem;">Billed monthly • Most selected protocol</div>
+                </div>
+
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Everything in Initiate Tier</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Unlimited 38°F Chilled Plunge & Saunas</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Normatec 3 Dynamic Compression Lounge</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Bi-Weekly InBody 770 Telemetry Scan</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>2 VIP Guest Passes per Month</span>
+                  </div>
+                  <div class="feature-item muted">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span>Dedicated Master Coach Included</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-dm btn-lime w-100 btn-select-plan" data-plan="obsidian" data-plan-name="OBSIDIAN PROTOCOL">
+                <span>SELECT OBSIDIAN</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plan 3: Black Matter (VIP) -->
+          <div class="col-lg-4 col-md-6">
+            <div class="dm-card pricing-card">
+              <div>
+                <span class="plan-tier-label">PROTOCOL 03 // VIP</span>
+                <h2 class="card-title mb-1">BLACK MATTER</h2>
+                <p class="text-muted" style="font-size: 0.88rem;">Private bespoke coaching & executive lounge access. Strictly capped to 75 active seats.</p>
+                
+                <div class="plan-price-block">
+                  <span class="price-currency">$</span>
+                  <span id="price-blackmatter" class="price-amount">289</span>
+                  <span class="price-period">/ month</span>
+                  <div id="note-blackmatter" class="text-muted mt-2" style="font-size: 0.8rem;">Billed monthly • Strictly limited to 75 active members</div>
+                </div>
+
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Everything in Obsidian Tier</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>4x 1-on-1 Master Coach Sessions / Month</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Permanent Private Locker with Laundry</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Bespoke Nutrition & Velocity Profiling</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Unlimited Guest Privileges</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Priority Recovery Suite Reservations</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-dm btn-metallic w-100 btn-select-plan" data-plan="blackMatter" data-plan-name="BLACK MATTER PROTOCOL">
+                <span>SELECT BLACK MATTER</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= FULL FEATURE COMPARISON MATRIX ================= -->
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">SPECIFICATION MATRIX</th>
+                <th scope="col">INITIATE ($79/mo)</th>
+                <th scope="col" style="color: var(--lime-accent);">OBSIDIAN ($149/mo)</th>
+                <th scope="col">BLACK MATTER ($289/mo)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24/7 Biometric Facial Entry</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Calibrated Eleiko IPF / IWF Steel</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Woodway Curves & Concept2 Cardio</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+              </tr>
+              <tr>
+                <td>38°F Chilled Plunge & Cedar Saunas</td>
+                <td><span class="table-cross">—</span></td>
+                <td><span class="table-check">✓ Unlimited</span></td>
+                <td><span class="table-check">✓ Private Priority</span></td>
+              </tr>
+              <tr>
+                <td>Normatec 3 Pneumatic Compression</td>
+                <td><span class="table-cross">—</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+              </tr>
+              <tr>
+                <td>InBody 770 Clinical Telemetry Scan</td>
+                <td>1 Initial Scan</td>
+                <td><span class="table-check">✓ Every 14 Days</span></td>
+                <td><span class="table-check">✓ Unlimited + Consultation</span></td>
+              </tr>
+              <tr>
+                <td>Complimentary Guest Passes</td>
+                <td><span class="table-cross">—</span></td>
+                <td>2 passes / month</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Dedicated 1-on-1 Master Coach</td>
+                <td>Discounted Add-on</td>
+                <td>Discounted Add-on</td>
+                <td><span class="table-check">✓ 4 Sessions / Month</span></td>
+              </tr>
+              <tr>
+                <td>Permanent Locker & Laundry Service</td>
+                <td><span class="table-cross">—</span></td>
+                <td><span class="table-cross">—</span></td>
+                <td><span class="table-check">✓ Included</span></td>
+              </tr>
+              <tr>
+                <td>Direct WhatsApp Concierge Access</td>
+                <td>Standard Support</td>
+                <td><span class="table-check">✓ Priority</span></td>
+                <td><span class="table-check">✓ 24/7 Dedicated Concierge</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FAQ ACCORDION ================= -->
+    <section class="section-spacing" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-metallic);">
+      <div class="container-custom" style="max-width: 900px;">
+        <div class="text-center mb-5">
+          <span class="mono-tag mb-2">COMMON INQUIRIES</span>
+          <h2 class="section-title">MEMBERSHIP PROTOCOL FAQ</h2>
+        </div>
+
+        <div class="dm-accordion">
+          <!-- Item 1 -->
+          <div class="accordion-item active">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Are there long-term contracts or cancellation penalties?</h3>
+              <div class="accordion-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="accordion-body" style="max-height: 200px;">
+              <div class="accordion-content">
+                No. Monthly memberships are billed on a 30-day recurring cadence. You may pause, adjust, or cancel your membership with a simple 30-day written notice via the mobile portal or front desk concierge. Annual memberships are prepaid for 12 months at a 20% discount and are non-refundable after a 14-day grace period.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">How does the overcrowding cap operate?</h3>
+              <div class="accordion-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                We calculate our active member cap based on our 45,000 square foot floor layout and platform ratios. Once active enrollment reaches capacity, incoming candidates enter a waitlist. This guarantees you will never wait in line for an Olympic rack, deadlift platform, or recovery tank during peak hours.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">How does 24/7 biometric gate entry work?</h3>
+              <div class="accordion-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                During your onboarding session, our staff scans your biometric profile into our encrypted, locally isolated access security system. You simply approach the high-speed optical turnstile or hold your mobile pass up to bypass into the facility at any hour of the day or night.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Can I freeze my membership if traveling or injured?</h3>
+              <div class="accordion-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                Yes. Obsidian and Black Matter tier members can freeze their membership up to 60 days per calendar year at zero administrative cost. Initiate tier members can pause for up to 30 days per calendar year.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">What is included in the guest privileges?</h3>
+              <div class="accordion-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                Obsidian members receive 2 guest passes each calendar month. Black Matter VIPs receive unlimited guest invitations (one guest per training session). Guests enjoy full access to the training floor and thermal suites alongside the host member.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container-custom footer-top">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness" width="220" class="mb-3">
+          <p>An uncompromising athletic architecture engineered for high-performance hypertrophy, biomechanical longevity, and thermal bio-recovery.</p>
+          <div class="mt-4">
+            <div class="status-beacon">
+              <span class="beacon-dot"></span>
+              <span>BIOMETRIC ACCESS: OPERATIONAL 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Training Protocols</a></li>
+            <li><a href="membership.html">Membership Plans</a></li>
+            <li><a href="trainers.html">Master Coaches</a></li>
+            <li><a href="about.html">Ethos & Gallery</a></li>
+            <li><a href="contact.html">Contact & Join</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">HEADQUARTERS</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>400 Obsidian Boulevard, District 7, Metropolis, NY 10001</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Direct Concierge: +1 (555) 019-8234</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Staffed Hours: 06:00 – 22:00 Daily<br>Member Access: 24/7 Unrestricted</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">INTEL DISPATCH</h4>
+          <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1rem;">Receive monthly protocol breakdowns, guest coaching lectures, and facility updates.</p>
+          <form class="newsletter-form" novalidate>
+            <div class="d-flex flex-column gap-2">
+              <input type="email" class="form-control-dm" placeholder="athlete@domain.com" required aria-label="Email address for dispatch">
+              <button type="submit" class="btn-dm btn-lime btn-sm">
+                <span>TRANSMIT BRIEFING</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-custom">
+      <div class="footer-bottom">
+        <div>© 2026 DARK MATTER ELITE FITNESS. ALL RIGHTS RESERVED. // PHASE 1 FRONTEND PROTOTYPE.</div>
+        <div class="d-flex gap-4">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Biometric Terms</a>
+          <a href="#">Facility Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: MEMBERSHIP CHECKOUT SIMULATION ================= -->
+  <div id="membershipModal" class="dm-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalSelectedPlan">
+    <div class="dm-modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="mono-tag mb-1">RESERVATION CHECKOUT</span>
+          <h3 id="modalSelectedPlan" class="modal-title">OBSIDIAN PROTOCOL</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-between align-items-center p-3 mb-4" style="background: rgba(184, 255, 44, 0.05); border: 1px solid var(--lime-border);">
+          <div>
+            <div id="modalPlanPrice" class="fw-bold text-white" style="font-size: 1.4rem; font-family: var(--font-display);">$149 / month</div>
+            <div id="modalBillingCycle" class="text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">Billed monthly recurring</div>
+          </div>
+          <span class="discount-badge">ZERO INITIATION FEE</span>
+        </div>
+
+        <div id="checkoutFeedback" class="form-alert-banner"></div>
+
+        <form id="membershipCheckoutForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="mbrName">Full Athlete Name <span class="req">*</span></label>
+            <input type="text" id="mbrName" class="form-control-dm" placeholder="Cassian Ward" required>
+            <div class="invalid-feedback-msg">Athlete name required.</div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="mbrEmail">Email Address <span class="req">*</span></label>
+                <input type="email" id="mbrEmail" class="form-control-dm" placeholder="cassian@domain.com" required>
+                <div class="invalid-feedback-msg">Valid email required for billing credential.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="mbrPhone">Mobile Contact <span class="req">*</span></label>
+                <input type="tel" id="mbrPhone" class="form-control-dm" placeholder="+1 (555) 489-0122" required>
+                <div class="invalid-feedback-msg">Phone number required.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mbrLocation">Primary Training Facility <span class="req">*</span></label>
+            <select id="mbrLocation" class="form-control-dm" required>
+              <option value="metropolis-flagship">District 7 — Metropolis Flagship (400 Obsidian Blvd)</option>
+              <option value="north-haven">District 2 — North Haven Arena (Opening Q4)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="mbrAgree" required>
+              <span>I acknowledge this is a Phase 1 prototype reservation checkout and authorize biometric verification upon arrival.</span>
+            </label>
+            <div class="invalid-feedback-msg">You must confirm acknowledgment.</div>
+          </div>
+
+          <button type="submit" class="btn-dm btn-lime w-100 mt-3">
+            <span>CONFIRM PROTOCOL RESERVATION</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Quick VIP Pass Modal -->
+  <div id="quickPassModal" class="dm-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="qpModalTitle">
+    <div class="dm-modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="mono-tag mb-1">COMPLIMENTARY ACCESS</span>
+          <h3 id="qpModalTitle" class="modal-title">CLAIM 1-DAY TRIAL PASS</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="quickPassAlert" class="form-alert-banner"></div>
+        <form id="quickPassForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="qpName">Full Name <span class="req">*</span></label>
+            <input type="text" id="qpName" class="form-control-dm" placeholder="Alex Morgan" required>
+            <div class="invalid-feedback-msg">Please provide your full legal name.</div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpEmail">Email Address <span class="req">*</span></label>
+                <input type="email" id="qpEmail" class="form-control-dm" placeholder="alex@domain.com" required>
+                <div class="invalid-feedback-msg">Valid email required for pass generation.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpPhone">Mobile Number <span class="req">*</span></label>
+                <input type="tel" id="qpPhone" class="form-control-dm" placeholder="+1 (555) 000-0000" required>
+                <div class="invalid-feedback-msg">Mobile number required for SMS bypass code.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="qpAgree" required>
+              <span>I acknowledge Dark Matter is an elite training facility and agree to facility safety guidelines and demo code issuance.</span>
+            </label>
+            <div class="invalid-feedback-msg">You must accept the safety guidelines.</div>
+          </div>
+          <button type="submit" class="btn-dm btn-lime w-100 mt-3">
+            <span>GENERATE DEMO PASS CODE</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container Placeholder -->
+  <div class="dm-toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/membership.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

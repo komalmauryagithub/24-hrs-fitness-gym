@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARK MATTER — Elite Fitness & Physical Architecture</title>
+  <meta name="description" content="DARK MATTER is an uncompromising, futuristic athletic training facility engineered for peak human performance, heavy iron hypertrophy, and thermal bio-recovery.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5 Grid & Utilities -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER / NAVIGATION ================= -->
+  <header class="site-header">
+    <div class="container-custom nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Dark Matter Home">
+        <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness Logo" width="220" height="44">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="programs.html" class="nav-link">Programs</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="about.html" class="nav-link">About & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-dm btn-outline-lime btn-sm">
+          <span>Book Tour</span>
+        </a>
+        <button type="button" class="btn-dm btn-lime btn-sm" data-open-modal="quickPassModal">
+          <span>Claim VIP Pass</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Panel -->
+  <div class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <img src="assets/images/logo.svg" alt="Dark Matter" width="160">
+        <div class="status-beacon">
+          <span class="beacon-dot"></span>
+          <span>24/7 OPEN</span>
+        </div>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="programs.html" class="nav-link">Training Protocols</a>
+        <a href="membership.html" class="nav-link">Membership Plans</a>
+        <a href="trainers.html" class="nav-link">Master Coaches</a>
+        <a href="about.html" class="nav-link">Ethos & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & Join</a>
+      </nav>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <button type="button" class="btn-dm btn-lime w-100" data-open-modal="quickPassModal">
+        <span>Claim Free Trial Pass</span>
+      </button>
+      <a href="contact.html" class="btn-dm btn-metallic w-100">
+        <span>Schedule Tour</span>
+      </a>
+      <div class="text-center text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">
+        400 OBSIDIAN BLVD • DISTRICT 7
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section">
+      <div class="hero-bg-media">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" alt="Dark Matter Elite Gym floor with calibrated weights and cinematic lighting">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container-custom" style="position: relative; z-index: 5;">
+        <div class="hero-content">
+          <!-- Status Tag -->
+          <div class="d-flex align-items-center gap-3 mb-3 reveal-init">
+            <div class="status-beacon">
+              <span class="beacon-dot"></span>
+              <span>BIOMETRIC GATEWAY ACTIVE // 24/7 ACCESS</span>
+            </div>
+          </div>
+
+          <h1 class="display-title mb-3 reveal-init delay-1">
+            REDEFINE YOUR <br>
+            <span class="text-lime">HUMAN THRESHOLD.</span>
+          </h1>
+
+          <p class="lead text-silver mb-4 reveal-init delay-2" style="font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 680px; line-height: 1.6;">
+            Dark Matter is an uncompromising shrine to physical optimization. 45,000 square feet of competition-grade Eleiko iron, metabolic testing labs, and cryogenic thermal suites engineered for the top 1%.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 align-items-center reveal-init delay-3">
+            <a href="membership.html" class="btn-dm btn-lime btn-lg">
+              <span>EXPLORE PROTOCOLS</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button type="button" class="btn-dm btn-metallic btn-lg" data-open-modal="quickPassModal">
+              <span>CLAIM 1-DAY PASS</span>
+            </button>
+            <a href="contact.html" class="btn-dm btn-outline-lime btn-lg">
+              <span>BOOK PRIVATE TOUR</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Animated Hero Stats Strip -->
+        <div class="hero-stats-strip reveal-init delay-4">
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="counter-val" data-target="45000">0</span>
+              <span class="stat-suffix">SQ FT</span>
+            </div>
+            <div class="stat-label">ARCHITECTURAL TRAINING LAB</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="counter-val" data-target="15000">0</span>
+              <span class="stat-suffix">+ LBS</span>
+            </div>
+            <div class="stat-label">CALIBRATED ELEIKO STEEL</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="counter-val" data-target="98">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <div class="stat-label">ATHLETE PERFORMANCE ADAPTATION</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="counter-val" data-target="24">0</span>
+              <span class="stat-suffix">/ 7</span>
+            </div>
+            <div class="stat-label">BIOMETRIC ZERO-FRICTION ENTRY</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRAND MANIFESTO STRIP ================= -->
+    <section class="section-spacing bg-angled-top" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-metallic); border-bottom: 1px solid var(--border-metallic);">
+      <div class="container-custom">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal-init">
+            <span class="mono-tag mb-2">01 // THE MANIFESTO</span>
+            <h2 class="section-title mb-4">
+              WE DO NOT BUILD TEMPLATES.<br>
+              <span class="text-lime">WE RE-ENGINEER BIOLOGY.</span>
+            </h2>
+            <p class="text-silver mb-3" style="font-size: 1.05rem;">
+              Commercial fitness has surrendered to overcrowded floors, plastic machines, and superficial wellness tropes. Dark Matter exists as an absolute counter-culture.
+            </p>
+            <p class="text-muted mb-4">
+              Every bar is knurled competition steel. Every square foot of air is scrubbed through medical HEPA-13 filtration. Every session is tracked through precision biometric telemetry so no effort is wasted.
+            </p>
+            <div class="d-flex flex-wrap gap-4">
+              <div class="d-flex align-items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="fw-bold" style="font-size: 0.95rem;">Cap on Active Memberships</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="fw-bold" style="font-size: 0.95rem;">Zero Waiting for Racks</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--lime-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="fw-bold" style="font-size: 0.95rem;">Full Recovery Suite Included</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal-init delay-2">
+            <div class="position-relative">
+              <div class="card-image-wrap" style="aspect-ratio: 4/3; clip-path: var(--clip-chamfer);">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" alt="Elite athlete deadlifting with calibrated plates in dark ambient lighting">
+              </div>
+              <!-- Floating Spec Box -->
+              <div class="position-absolute bottom-0 start-0 translate-middle-y ms-3 p-3" style="background: rgba(14, 17, 18, 0.92); border: 1px solid var(--lime-border); backdrop-filter: blur(10px); clip-path: var(--clip-chamfer); max-width: 260px;">
+                <div class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 0.75rem;">TELEMETRY VERIFIED</div>
+                <div style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;">4.8x AVERAGE STRENGTH GAIN</div>
+                <div class="text-muted" style="font-size: 0.78rem;">Across 12-week tracked cycle</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED PROTOCOLS ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-5">
+          <div class="reveal-init">
+            <span class="mono-tag mb-2">02 // PERFORMANCE PILLARS</span>
+            <h2 class="section-title">ENGINEERED PROTOCOLS</h2>
+          </div>
+          <div class="reveal-init delay-1 mt-3 mt-md-0">
+            <a href="programs.html" class="btn-dm btn-outline-lime">
+              <span>VIEW ALL 6 PROTOCOLS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Program 1 -->
+          <div class="col-md-6 col-lg-3 reveal-init">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">STRENGTH</span>
+                <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop" alt="Athlete training with barbell">
+              </div>
+              <h3 class="card-title mb-2">HYPERTROPHY & MAX LOAD</h3>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Periodized linear progression utilizing Eleiko bars, custom force curves, and progressive mechanical tension.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">SESSION</span>
+                  <span class="metric-value">75 MIN</span>
+                </div>
+              </div>
+              <a href="programs.html" class="btn-dm btn-metallic btn-sm w-100 mt-2">
+                <span>INSPECT PROTOCOL</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Program 2 -->
+          <div class="col-md-6 col-lg-3 reveal-init delay-1">
+            <div class="dm-card program-card dm-card-highlight">
+              <div class="card-image-wrap">
+                <span class="card-badge">METCON</span>
+                <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=800&auto=format&fit=crop" alt="High intensity interval treadmill sprint">
+              </div>
+              <h3 class="card-title mb-2">METABOLIC CONDITIONING</h3>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Lactate threshold testing, Woodway curves, Concept2 ergs, and heavy sled resistance for maximum VO2 expansion.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">SESSION</span>
+                  <span class="metric-value">50 MIN</span>
+                </div>
+              </div>
+              <a href="programs.html" class="btn-dm btn-lime btn-sm w-100 mt-2">
+                <span>INSPECT PROTOCOL</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Program 3 -->
+          <div class="col-md-6 col-lg-3 reveal-init delay-2">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">RECOVERY</span>
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop" alt="Thermal sauna and recovery plunge">
+              </div>
+              <h3 class="card-title mb-2">CRYO & THERMAL RECOVERY</h3>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Contrast therapy combining 38°F plunge tanks, 195°F dry saunas, and pneumatic compression for accelerated recovery.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">SESSION</span>
+                  <span class="metric-value">60 MIN</span>
+                </div>
+              </div>
+              <a href="programs.html" class="btn-dm btn-metallic btn-sm w-100 mt-2">
+                <span>INSPECT PROTOCOL</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Program 4 -->
+          <div class="col-md-6 col-lg-3 reveal-init delay-3">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">1-ON-1</span>
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop" alt="Private coaching session with master coach">
+              </div>
+              <h3 class="card-title mb-2">BESPOKE ARCHITECTURE</h3>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Dedicated Master Coach with InBody 770 composition mapping, movement velocity radar, and personalized nutrition.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">SESSION</span>
+                  <span class="metric-value">60 MIN</span>
+                </div>
+              </div>
+              <a href="programs.html" class="btn-dm btn-metallic btn-sm w-100 mt-2">
+                <span>INSPECT PROTOCOL</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE ARCHITECTURAL ADVANTAGE ================= -->
+    <section class="section-spacing" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-metallic); border-bottom: 1px solid var(--border-metallic);">
+      <div class="container-custom">
+        <div class="text-center max-w-700 mx-auto mb-5 reveal-init" style="max-width: 680px; margin: 0 auto;">
+          <span class="mono-tag mb-2">03 // ADVANTAGE</span>
+          <h2 class="section-title mb-3">WHY DARK MATTER STANDS ALONE</h2>
+          <p class="text-silver">Precision machinery, uncompromised materials, and zero commercial compromises.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal-init">
+            <div class="dm-card h-100">
+              <div class="text-lime mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="card-title mb-2" style="font-size: 1.4rem;">SWEDISH ELEIKO STEEL</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">
+                Calibrated IPF/IWF certified plates and bars. 216,000 PSI tensile strength Swedish steel for unyielding reliability.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-init delay-1">
+            <div class="dm-card h-100">
+              <div class="text-lime mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h3 class="card-title mb-2" style="font-size: 1.4rem;">INBODY 770 TELEMETRY</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">
+                Clinical research-grade segmental body composition analysis, visceral fat indexing, and intracellular water monitoring.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-init delay-2">
+            <div class="dm-card h-100">
+              <div class="text-lime mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="card-title mb-2" style="font-size: 1.4rem;">NO OVERCROWDING CAP</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">
+                Active memberships are mathematically restricted to ensure you never wait for an Olympic rack, dumbbell, or sauna bench.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal-init delay-3">
+            <div class="dm-card h-100">
+              <div class="text-lime mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-title mb-2" style="font-size: 1.4rem;">24/7 BIOMETRIC PRIVACY</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">
+                Encrypted facial recognition and secure mobile gate bypass provide unfettered access 365 days a year on your schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MASTER COACHES PREVIEW ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-5">
+          <div class="reveal-init">
+            <span class="mono-tag mb-2">04 // LEADERSHIP</span>
+            <h2 class="section-title">MASTER COACHES</h2>
+          </div>
+          <div class="reveal-init delay-1 mt-3 mt-md-0">
+            <a href="trainers.html" class="btn-dm btn-outline-lime">
+              <span>VIEW FULL ROSTER (6 COACHES)</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Coach 1 -->
+          <div class="col-md-4 reveal-init">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=800&auto=format&fit=crop" alt="Marcus Vance - Head of Maximal Strength">
+                <div class="trainer-image-overlay"></div>
+              </div>
+              <div class="trainer-content">
+                <span class="trainer-role">HEAD OF MAXIMAL STRENGTH</span>
+                <h3 class="card-title mb-1">MARCUS VANCE</h3>
+                <div class="trainer-cert-list">
+                  <span class="cert-tag">CSCS</span>
+                  <span class="cert-tag">USAW-2</span>
+                  <span class="cert-tag">12 YRS PRO</span>
+                </div>
+                <p class="text-muted mb-4" style="font-size: 0.88rem;">
+                  Specializes in powerlifting biomechanics, CNS fatigue monitoring, and compound neuromuscular recruitment.
+                </p>
+                <button type="button" class="btn-dm btn-metallic btn-sm w-100 btn-book-trainer" data-trainer-name="Marcus Vance" data-trainer-spec="Maximal Strength & Hypertrophy">
+                  <span>BOOK CONSULTATION</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coach 2 -->
+          <div class="col-md-4 reveal-init delay-1">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=800&auto=format&fit=crop" alt="Elena Rostova - Director of High-Intensity MetCon">
+                <div class="trainer-image-overlay"></div>
+              </div>
+              <div class="trainer-content">
+                <span class="trainer-role">DIRECTOR OF METABOLIC SYSTEMS</span>
+                <h3 class="card-title mb-1">ELENA ROSTOVA</h3>
+                <div class="trainer-cert-list">
+                  <span class="cert-tag">EXOS XPS</span>
+                  <span class="cert-tag">CROSSFIT L3</span>
+                  <span class="cert-tag">OLYMPIC DEV</span>
+                </div>
+                <p class="text-muted mb-4" style="font-size: 0.88rem;">
+                  Architects anaerobic endurance pathways, VO2 max threshold training, and fast-twitch kinetic conditioning.
+                </p>
+                <button type="button" class="btn-dm btn-metallic btn-sm w-100 btn-book-trainer" data-trainer-name="Elena Rostova" data-trainer-spec="Metabolic Systems & Conditioning">
+                  <span>BOOK CONSULTATION</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coach 3 -->
+          <div class="col-md-4 reveal-init delay-2">
+            <div class="trainer-card">
+              <div class="trainer-image">
+                <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Darius Thorne - Kinetic Biomechanics Specialist">
+                <div class="trainer-image-overlay"></div>
+              </div>
+              <div class="trainer-content">
+                <span class="trainer-role">BIOMECHANICS & COMBAT MOBILITY</span>
+                <h3 class="card-title mb-1">DARIUS THORNE</h3>
+                <div class="trainer-cert-list">
+                  <span class="cert-tag">FRCms</span>
+                  <span class="cert-tag">FMS-2</span>
+                  <span class="cert-tag">BOXING MASTER</span>
+                </div>
+                <p class="text-muted mb-4" style="font-size: 0.88rem;">
+                  Joint capsule optimization, end-range rotational force production, and fight-ready calisthenic power.
+                </p>
+                <button type="button" class="btn-dm btn-metallic btn-sm w-100 btn-book-trainer" data-trainer-name="Darius Thorne" data-trainer-spec="Biomechanics & Functional Combat">
+                  <span>BOOK CONSULTATION</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEMBERSHIP PREVIEW STRIP ================= -->
+    <section class="section-spacing bg-angled-top" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-metallic);">
+      <div class="container-custom">
+        <div class="text-center mb-5 reveal-init" style="max-width: 650px; margin: 0 auto;">
+          <span class="mono-tag mb-2">05 // MEMBERSHIP PROTOCOLS</span>
+          <h2 class="section-title mb-3">SELECT YOUR LEVEL OF ENTRY</h2>
+          <p class="text-silver">Transparent monthly or annual plans. Zero hidden registration or lock-in initiation fees.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Initiate Tier -->
+          <div class="col-lg-4 col-md-6 reveal-init">
+            <div class="dm-card pricing-card">
+              <div>
+                <span class="plan-tier-label">PROTOCOL 01</span>
+                <h3 class="card-title mb-1">INITIATE</h3>
+                <p class="text-muted" style="font-size: 0.88rem;">Essential access to calibrated lifting floor and cardio cinema.</p>
+                <div class="plan-price-block">
+                  <span class="price-currency">$</span>
+                  <span class="price-amount">79</span>
+                  <span class="price-period">/ month</span>
+                  <div class="text-muted mt-1" style="font-size: 0.8rem;">Billed monthly • Cancel anytime</div>
+                </div>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Full 24/7 Biometric Gym Access</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Eleiko Olympic Platforms & Dumbbells</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Dark Matter Mobile Locker Access</span>
+                  </div>
+                  <div class="feature-item muted">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span>Thermal Saunas & Cold Plunges</span>
+                  </div>
+                </div>
+              </div>
+              <a href="membership.html" class="btn-dm btn-metallic w-100">
+                <span>VIEW PLAN DETAILS</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Obsidian Tier (Featured) -->
+          <div class="col-lg-4 col-md-6 reveal-init delay-1">
+            <div class="dm-card pricing-card dm-card-highlight">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="plan-tier-label text-lime">PROTOCOL 02 // MOST SELECTED</span>
+                  <span class="discount-badge">POPULAR</span>
+                </div>
+                <h3 class="card-title mb-1 text-white">OBSIDIAN</h3>
+                <p class="text-silver" style="font-size: 0.88rem;">Complete all-access performance and contrast thermal recovery.</p>
+                <div class="plan-price-block">
+                  <span class="price-currency text-lime">$</span>
+                  <span class="price-amount text-lime">149</span>
+                  <span class="price-period">/ month</span>
+                  <div class="text-lime mt-1" style="font-size: 0.8rem;">Includes full sauna & ice bath access</div>
+                </div>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Everything in Initiate Tier</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Unlimited 38°F Plunge & Infrared Saunas</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Monthly InBody 770 Telemetry Scan</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>2 VIP Guest Passes per Month</span>
+                  </div>
+                </div>
+              </div>
+              <a href="membership.html" class="btn-dm btn-lime w-100">
+                <span>SELECT OBSIDIAN</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Black Matter Tier -->
+          <div class="col-lg-4 col-md-6 reveal-init delay-2">
+            <div class="dm-card pricing-card">
+              <div>
+                <span class="plan-tier-label">PROTOCOL 03 // PRIVATE</span>
+                <h3 class="card-title mb-1">BLACK MATTER</h3>
+                <p class="text-muted" style="font-size: 0.88rem;">Private VIP bespoke physical architecture. Cap of 75 members.</p>
+                <div class="plan-price-block">
+                  <span class="price-currency">$</span>
+                  <span class="price-amount">289</span>
+                  <span class="price-period">/ month</span>
+                  <div class="text-muted mt-1" style="font-size: 0.8rem;">Includes 4x monthly Master Coach sessions</div>
+                </div>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Everything in Obsidian Tier</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>4x Dedicated 1-on-1 Master Coach Sessions</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Private Reserved Locker & Laundry Service</span>
+                  </div>
+                  <div class="feature-item">
+                    <svg class="feature-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Personalized Biometric Nutrition Protocol</span>
+                  </div>
+                </div>
+              </div>
+              <a href="membership.html" class="btn-dm btn-metallic w-100">
+                <span>VIEW PLAN DETAILS</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS / METRIC TRANSFORMATIONS ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-5">
+          <div class="reveal-init">
+            <span class="mono-tag mb-2">06 // TESTIMONIALS</span>
+            <h2 class="section-title">VERIFIED TRANSFORMATIONS</h2>
+          </div>
+          <div class="reveal-init delay-1 text-muted" style="font-family: var(--font-mono); font-size: 0.85rem;">
+            AVERAGE MEMBER TENURE: 2.4 YEARS
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 reveal-init">
+            <div class="dm-card h-100">
+              <div class="d-flex align-items-center gap-1 text-lime mb-3">
+                <span>★★★★★</span>
+              </div>
+              <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
+                "I trained at upscale gyms in Manhattan and London for a decade. None come close to the acoustic design, equipment caliber, and focused intensity of Dark Matter. There is zero posturing here. Only progress."
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
+                <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Julian Richter" width="44" height="44" style="object-fit: cover;">
+                </div>
+                <div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">JULIAN RICHTER</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">OBSIDIAN MEMBER • +65 LBS SQUAT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal-init delay-1">
+            <div class="dm-card h-100">
+              <div class="d-flex align-items-center gap-1 text-lime mb-3">
+                <span>★★★★★</span>
+              </div>
+              <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
+                "The cold plunge and infrared sauna suites completely changed my recovery curve. I went from needing 72 hours between brutal deadlift sessions to hitting peak volume every 48 hours without CNS burnout."
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
+                <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Tara Sterling" width="44" height="44" style="object-fit: cover;">
+                </div>
+                <div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">TARA STERLING</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">BLACK MATTER VIP • HYROX COMPETITOR</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal-init delay-2">
+            <div class="dm-card h-100">
+              <div class="d-flex align-items-center gap-1 text-lime mb-3">
+                <span>★★★★★</span>
+              </div>
+              <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
+                "The no-overcrowding rule is real. I train at 6:30 PM on Monday and walk straight to an open Eleiko platform with calibrated competition plates ready. It respects an executive's time like no other place."
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
+                <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Kaelen Mercer" width="44" height="44" style="object-fit: cover;">
+                </div>
+                <div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">KAELEN MERCER</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">OBSIDIAN MEMBER • TECH FOUNDER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA BANNER STRIP ================= -->
+    <section class="section-spacing" style="background: radial-gradient(circle at 50% 50%, rgba(184, 255, 44, 0.08) 0%, rgba(8, 10, 10, 0.98) 75%); border-top: 1px solid var(--border-metallic);">
+      <div class="container-custom text-center">
+        <span class="mono-tag mb-3 reveal-init">07 // INITIATION</span>
+        <h2 class="display-title mb-4 reveal-init delay-1">
+          YOUR OLD BENCHMARKS <br>
+          <span class="text-lime">NO LONGER APPLY.</span>
+        </h2>
+        <p class="lead text-silver mb-5 mx-auto reveal-init delay-2" style="max-width: 620px;">
+          Experience Dark Matter firsthand. Claim a 1-day complimentary biometric trial pass or book a private walkthrough with our director of coaching.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 reveal-init delay-3">
+          <button type="button" class="btn-dm btn-lime btn-lg" data-open-modal="quickPassModal">
+            <span>CLAIM 1-DAY VIP PASS</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <a href="contact.html" class="btn-dm btn-metallic btn-lg">
+            <span>SCHEDULE PRIVATE TOUR</span>
+          </a>
+          <button type="button" class="btn-dm btn-outline-lime btn-lg btn-whatsapp-cta">
+            <span>WHATSAPP CONCIERGE</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container-custom footer-top">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness" width="220" class="mb-3">
+          <p>
+            An uncompromising athletic architecture engineered for high-performance hypertrophy, biomechanical longevity, and thermal bio-recovery.
+          </p>
+          <div class="mt-4">
+            <div class="status-beacon">
+              <span class="beacon-dot"></span>
+              <span>BIOMETRIC ACCESS: OPERATIONAL 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Training Protocols</a></li>
+            <li><a href="membership.html">Membership Plans</a></li>
+            <li><a href="trainers.html">Master Coaches</a></li>
+            <li><a href="about.html">Ethos & Gallery</a></li>
+            <li><a href="contact.html">Contact & Join</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">HEADQUARTERS</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>400 Obsidian Boulevard, District 7, Metropolis, NY 10001</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Direct Concierge: +1 (555) 019-8234</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Staffed Hours: 06:00 – 22:00 Daily<br>Member Access: 24/7 Unrestricted</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">INTEL DISPATCH</h4>
+          <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1rem;">
+            Receive monthly protocol breakdowns, guest coaching lectures, and facility updates.
+          </p>
+          <form class="newsletter-form" novalidate>
+            <div class="d-flex flex-column gap-2">
+              <input type="email" class="form-control-dm" placeholder="athlete@domain.com" required aria-label="Email address for dispatch">
+              <button type="submit" class="btn-dm btn-lime btn-sm">
+                <span>TRANSMIT BRIEFING</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-custom">
+      <div class="footer-bottom">
+        <div>
+          © 2026 DARK MATTER ELITE FITNESS. ALL RIGHTS RESERVED. // PHASE 1 FRONTEND PROTOTYPE.
+        </div>
+        <div class="d-flex gap-4">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Biometric Terms</a>
+          <a href="#">Facility Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: QUICK 1-DAY PASS ================= -->
+  <div id="quickPassModal" class="dm-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="qpModalTitle">
+    <div class="dm-modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="mono-tag mb-1">COMPLIMENTARY ACCESS</span>
+          <h3 id="qpModalTitle" class="modal-title">CLAIM 1-DAY TRIAL PASS</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="quickPassAlert" class="form-alert-banner"></div>
+
+        <form id="quickPassForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="qpName">Full Name <span class="req">*</span></label>
+            <input type="text" id="qpName" class="form-control-dm" placeholder="Alex Morgan" required>
+            <div class="invalid-feedback-msg">Please provide your full legal name.</div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpEmail">Email Address <span class="req">*</span></label>
+                <input type="email" id="qpEmail" class="form-control-dm" placeholder="alex@domain.com" required>
+                <div class="invalid-feedback-msg">Valid email required for pass generation.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpPhone">Mobile Number <span class="req">*</span></label>
+                <input type="tel" id="qpPhone" class="form-control-dm" placeholder="+1 (555) 000-0000" required>
+                <div class="invalid-feedback-msg">Mobile number required for SMS bypass code.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="qpAgree" required>
+              <span>I acknowledge Dark Matter is an elite training facility and agree to facility safety guidelines and demo code issuance.</span>
+            </label>
+            <div class="invalid-feedback-msg">You must accept the safety guidelines.</div>
+          </div>
+
+          <button type="submit" class="btn-dm btn-lime w-100 mt-3">
+            <span>GENERATE DEMO PASS CODE</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container Placeholder -->
+  <div class="dm-toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

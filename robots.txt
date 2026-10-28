@@ -1,0 +1,10 @@
+# DARK MATTER — Elite Fitness Robots Directive
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backups/
+Disallow: /scripts/
+Disallow: /scratch/
+
+Sitemap: https://darkmatter-fitness.com/sitemap.xml

@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # DARK MATTER — Web Application (PHP 8.3 + Apache)
+  # ============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: darkmatter_web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_NAME: "DARK MATTER — Elite Fitness"
+      APP_URL: "http://localhost:8080"
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: fitness_gym
+      DB_USER: darkmatter_user
+      DB_PASS: DarkMatter_Prod2026_Secure!
+      DB_CHARSET: utf8mb4
+      ADMIN_INIT_USERNAME: darkmatter_admin
+      ADMIN_INIT_EMAIL: admin@darkmatter-fitness.com
+      ADMIN_INIT_PASSWORD: DarkMatter#2026!Elite
+      STORAGE_DRIVER: local
+    volumes:
+      - uploads_data:/var/www/html/uploads
+      - backups_data:/var/www/html/backups
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ============================================================================
+  # DARK MATTER — Relational Database (MySQL 8.0)
+  # ============================================================================
+  db:
+    image: mysql:8.0.36
+    container_name: darkmatter_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Root_DarkMatter_2026_Secret!
+      MYSQL_DATABASE: fitness_gym
+      MYSQL_USER: darkmatter_user
+      MYSQL_PASSWORD: DarkMatter_Prod2026_Secure!
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: >
+      --default-authentication-plugin=caching_sha2_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --max_connections=200
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pRoot_DarkMatter_2026_Secret!"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysql_data:
+    driver: local
+  uploads_data:
+    driver: local
+  backups_data:
+    driver: local

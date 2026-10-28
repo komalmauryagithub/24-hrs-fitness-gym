@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <!-- Neon Glow Filter -->
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur1" />
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="ambient-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+    </filter>
+    <linearGradient id="cyan-tube" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="50%" stop-color="#67E8F9" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient background glow behind text -->
+  <ellipse cx="160" cy="40" rx="130" ry="25" fill="#00E5FF" opacity="0.12" filter="url(#ambient-cyan)" />
+
+  <!-- 24HRS NEON GLYPH & TYPOGRAPHY -->
+  <g filter="url(#neon-glow)">
+    <!-- 2 -->
+    <path d="M 28 35 C 28 22, 50 16, 58 24 C 64 30, 48 38, 30 48 L 68 48" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 28 35 C 28 22, 50 16, 58 24 C 64 30, 48 38, 30 48 L 68 48" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- 4 with Integrated Lightning Bolt -->
+    <path d="M 104 14 L 76 38 L 116 38" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 104 14 L 76 38 L 116 38" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <!-- Lightning core piercing through -->
+    <path d="M 104 14 L 88 42 L 102 42 L 94 56" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 104 14 L 88 42 L 102 42 L 94 56" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- H -->
+    <path d="M 124 22 L 124 48 M 124 35 L 148 35 M 148 22 L 148 48" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 124 22 L 124 48 M 124 35 L 148 35 M 148 22 L 148 48" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- R -->
+    <path d="M 160 48 L 160 22 L 180 22 C 188 22, 192 26, 192 32 C 192 37, 186 40, 178 40 L 160 40 M 176 40 L 192 48" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 160 48 L 160 22 L 180 22 C 188 22, 192 26, 192 32 C 192 37, 186 40, 178 40 L 160 40 M 176 40 L 192 48" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- S -->
+    <path d="M 230 25 C 224 21, 208 21, 208 28 C 208 34, 230 35, 230 42 C 230 49, 214 49, 206 45" 
+          stroke="#00E5FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 230 25 C 224 21, 208 21, 208 28 C 208 34, 230 35, 230 42 C 230 49, 214 49, 206 45" 
+          stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- FITNESS Subtitle in Spaced Neon -->
+    <text x="135" y="70" 
+          font-family="'Barlow Condensed', 'Arial Black', sans-serif" 
+          font-weight="800" 
+          font-size="16" 
+          letter-spacing="9" 
+          fill="#00E5FF" 
+          stroke="#00E5FF" 
+          stroke-width="1"
+          text-anchor="middle">FITNESS</text>
+    <text x="135" y="70" 
+          font-family="'Barlow Condensed', 'Arial Black', sans-serif" 
+          font-weight="800" 
+          font-size="16" 
+          letter-spacing="9" 
+          fill="#FFFFFF" 
+          text-anchor="middle">FITNESS</text>
+  </g>
+</svg>

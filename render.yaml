@@ -1,0 +1,63 @@
+# ==============================================================================
+# DARK MATTER — Render Blueprint Specification (render.yaml)
+# https://render.com/docs/blueprint-spec
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # Web Service: PHP 8.3 + Apache Container
+  # ----------------------------------------------------------------------------
+  - type: web
+    name: darkmatter-gym
+    runtime: docker
+    plan: starter
+    region: oregon # or frankfurt / singapore
+    healthCheckPath: /healthz.php
+    autoDeploy: true
+
+    # Persistent Storage Disk to preserve uploaded headshots and arena imagery
+    disk:
+      name: uploads-data
+      mountPath: /var/www/html/uploads
+      sizeGB: 5
+
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        sync: false # Set to your live Render URL e.g. https://darkmatter-gym.onrender.com or custom domain
+
+      # External Managed MySQL Credentials (e.g. Aiven for MySQL, PlanetScale, or Railway)
+      # In Render Dashboard, enter these under Environment Variables:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_CHARSET
+        value: utf8mb4
+      - key: DB_SSL_VERIFY_SERVER_CERT
+        value: "true"
+
+      # Optional Unified Connection String
+      - key: DATABASE_URL
+        sync: false
+
+      # Storage Driver (local uses mounted disk above, s3 uses Cloudflare R2 / AWS S3)
+      - key: STORAGE_DRIVER
+        value: local
+
+      # Initial Admin Setup (Executed automatically during first release migration)
+      - key: ADMIN_INIT_USERNAME
+        sync: false
+      - key: ADMIN_INIT_EMAIL
+        sync: false
+      - key: ADMIN_INIT_PASSWORD
+        sync: false

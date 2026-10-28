@@ -1,0 +1,10 @@
+.git
+.gitignore
+.env
+backups/*.sql
+backups/*.gz
+scratch/
+.system_generated/
+*.log
+docker-compose.override.yml
+README.md

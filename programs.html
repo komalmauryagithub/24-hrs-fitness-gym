@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Protocols & Facilities — DARK MATTER Elite Fitness</title>
+  <meta name="description" content="Explore science-backed athletic training protocols and Olympic-grade facility architecture at Dark Matter. Hypertrophy, MetCon, and thermal recovery.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5 Grid & Utilities -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container-custom nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Dark Matter Home">
+        <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness Logo" width="220" height="44">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link active">Programs</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="about.html" class="nav-link">About & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-dm btn-outline-lime btn-sm">
+          <span>Book Tour</span>
+        </a>
+        <button type="button" class="btn-dm btn-lime btn-sm" data-open-modal="quickPassModal">
+          <span>Claim VIP Pass</span>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Panel -->
+  <div class="mobile-drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <img src="assets/images/logo.svg" alt="Dark Matter" width="160">
+        <div class="status-beacon">
+          <span class="beacon-dot"></span>
+          <span>24/7 OPEN</span>
+        </div>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="programs.html" class="nav-link active">Training Protocols</a>
+        <a href="membership.html" class="nav-link">Membership Plans</a>
+        <a href="trainers.html" class="nav-link">Master Coaches</a>
+        <a href="about.html" class="nav-link">Ethos & Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & Join</a>
+      </nav>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <button type="button" class="btn-dm btn-lime w-100" data-open-modal="quickPassModal">
+        <span>Claim Free Trial Pass</span>
+      </button>
+      <a href="contact.html" class="btn-dm btn-metallic w-100">
+        <span>Schedule Tour</span>
+      </a>
+      <div class="text-center text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">
+        400 OBSIDIAN BLVD • DISTRICT 7
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainContent">
+
+    <!-- ================= SUBPAGE HERO ================= -->
+    <section class="subpage-hero">
+      <div class="container-custom">
+        <span class="mono-tag mb-2">PERFORMANCE BLUEPRINTS</span>
+        <h1 class="display-title mb-3">TRAINING PROTOCOLS & FACILITIES</h1>
+        <p class="lead text-silver" style="max-width: 680px;">
+          Every program is grounded in exercise physiology, periodized fatigue tracking, and high-tensile resistance training. Inspect our core protocols below.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FILTERABLE PROGRAMS SECTION ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-wrapper programs-filter">
+          <button type="button" class="filter-tab active" data-filter="all">ALL PROTOCOLS (6)</button>
+          <button type="button" class="filter-tab" data-filter="strength">STRENGTH & HYPERTROPHY</button>
+          <button type="button" class="filter-tab" data-filter="cardio">METABOLIC CONDITIONING</button>
+          <button type="button" class="filter-tab" data-filter="recovery">BIO-THERMAL RECOVERY</button>
+          <button type="button" class="filter-tab" data-filter="functional">FUNCTIONAL & COMBAT</button>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="row g-4" id="programsGrid">
+          
+          <!-- Card 1: Strength -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="strength">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">STRENGTH // HEAVY IRON</span>
+                <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop" alt="Barbell strength training">
+              </div>
+              <h2 class="card-title mb-2">HYPERTROPHY & MAXIMAL STRENGTH</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Periodized linear overload engineered for central nervous system efficiency, mechanical tension, and absolute myofibrillar mass.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">650–850 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">75 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">COACH RATIO</span>
+                  <span class="metric-value">1 : 6 ATHLETES</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="hypertrophy-strength">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: MetCon -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="cardio">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">CARDIO // HIGH INTENSITY</span>
+                <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=800&auto=format&fit=crop" alt="High speed sprint training">
+              </div>
+              <h2 class="card-title mb-2">METABOLIC CONDITIONING (METCON)</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                High-anaerobic power intervals combining curved treadmills, Concept2 SkiErgs, assault bikes, and turf sled acceleration.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">750–1000 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">50 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">COACH RATIO</span>
+                  <span class="metric-value">1 : 8 ATHLETES</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="metabolic-conditioning">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Recovery -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="recovery">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">RECOVERY // BIO-NEURAL</span>
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop" alt="Ice bath plunge and sauna">
+              </div>
+              <h2 class="card-title mb-2">THERMAL FLUID & CRYO RECOVERY</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Scientific contrast therapy: 38°F chilled immersion baths paired with 195°F Swedish saunas and Normatec lymphatic flushing.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">150–250 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">60 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">STAFF</span>
+                  <span class="metric-value">SPA TECH ON DUTY</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="cryo-thermal-recovery">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: 1-on-1 Bespoke (Strength / Functional) -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="strength">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">BESPOKE // MASTER COACH</span>
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop" alt="Personal coaching session">
+              </div>
+              <h2 class="card-title mb-2">ELITE 1-ON-1 PHYSICAL ARCHITECTURE</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Private biometric programming tailored to individual anthropometrics, force-plate velocity profiling, and elite sports prep.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">500–900 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">60 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">COACH RATIO</span>
+                  <span class="metric-value">1 : 1 PRIVATE</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="elite-personal-coaching">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Functional Combat -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="functional">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">FUNCTIONAL // KINETIC</span>
+                <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Combat conditioning heavy bag session">
+              </div>
+              <h2 class="card-title mb-2">TACTICAL COMBAT & STRIKING</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                Heavy bag combinations, rotational kinetic core transfer, anaerobic pacing, and fight-conditioned stamina drill work.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">700–950 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">60 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">COACH RATIO</span>
+                  <span class="metric-value">1 : 6 ATHLETES</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="combat-conditioning">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Calisthenics & Mobility -->
+          <div class="col-md-6 col-lg-4 program-grid-item" data-category="functional">
+            <div class="dm-card program-card">
+              <div class="card-image-wrap">
+                <span class="card-badge">FUNCTIONAL // CALISTHENICS</span>
+                <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=800&auto=format&fit=crop" alt="Gymnastic ring and calisthenics training">
+              </div>
+              <h2 class="card-title mb-2">KINETIC MOBILITY & CALISTHENICS</h2>
+              <p class="text-muted mb-auto" style="font-size: 0.9rem;">
+                End-range joint resilience, gymnastic ring leverage, core anti-extension control, and bodyweight power mastery.
+              </p>
+              <div class="program-metrics">
+                <div class="metric-item">
+                  <span class="metric-label">INTENSITY</span>
+                  <div class="intensity-dots">
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot filled"></span>
+                    <span class="intensity-dot"></span>
+                    <span class="intensity-dot"></span>
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">BURN RATE</span>
+                  <span class="metric-value">450–600 KCAL</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">DURATION</span>
+                  <span class="metric-value">55 MIN</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">COACH RATIO</span>
+                  <span class="metric-value">1 : 8 ATHLETES</span>
+                </div>
+              </div>
+              <button type="button" class="btn-dm btn-lime btn-sm w-100 btn-inspect-protocol" data-protocol-id="functional-calisthenics">
+                <span>INSPECT PROTOCOL DETAILS</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Empty Filter State Container -->
+        <div id="programsEmptyState" style="display: none; padding: 4rem 1rem; text-align: center;">
+          <div class="text-muted mb-3" style="font-family: var(--font-mono);">// NO PROTOCOLS MATCH FILTER</div>
+          <p class="text-silver">Please select another category tab to view active training blueprints.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FACILITY ARCHITECTURAL ARENAS ================= -->
+    <section class="section-spacing" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-metallic);">
+      <div class="container-custom">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-5">
+          <div>
+            <span class="mono-tag mb-2">SPATIAL BLUEPRINTS</span>
+            <h2 class="section-title">THE 4 FACILITY ARENAS</h2>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <a href="about.html" class="btn-dm btn-metallic">
+              <span>EXPLORE ETHOS & GALLERY</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Arena 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="dm-card h-100">
+              <div class="card-image-wrap mb-3" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop" alt="Calibrated Powerlifting Arena">
+              </div>
+              <span class="mono-tag mb-1" style="font-size: 0.7rem;">ARENA 01 // 18,000 SQ FT</span>
+              <h3 class="card-title mb-2" style="font-size: 1.35rem;">OLYMPIC IRON PLATFORMS</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">
+                12 Eleiko IPF-certified lifting cages, competition benches, dual cable towers, and urethane dumbbells up to 160 lbs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arena 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="dm-card h-100">
+              <div class="card-image-wrap mb-3" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=600&auto=format&fit=crop" alt="Metabolic Cardio Cinema">
+              </div>
+              <span class="mono-tag mb-1" style="font-size: 0.7rem;">ARENA 02 // 10,000 SQ FT</span>
+              <h3 class="card-title mb-2" style="font-size: 1.35rem;">METABOLIC CARDIO CINEMA</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">
+                Acoustically tuned dark cinema featuring 20 motorless Woodway Curves, Concept2 rowers, and live biometric heart telemetry.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arena 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="dm-card h-100">
+              <div class="card-image-wrap mb-3" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop" alt="Thermal and Cryo Spa Suite">
+              </div>
+              <span class="mono-tag mb-1" style="font-size: 0.7rem;">ARENA 03 // 8,000 SQ FT</span>
+              <h3 class="card-title mb-2" style="font-size: 1.35rem;">BIO-THERMAL SPA & CRYO</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">
+                Dual 38°F filtration plunge pools, 195°F Swedish cedar dry saunas, infrared thermal pods, and zero-gravity recliners.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arena 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="dm-card h-100">
+              <div class="card-image-wrap mb-3" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop" alt="Sprint and Sled Indoor Turf">
+              </div>
+              <span class="mono-tag mb-1" style="font-size: 0.7rem;">ARENA 04 // 9,000 SQ FT</span>
+              <h3 class="card-title mb-2" style="font-size: 1.35rem;">40M ATHLETIC SPRINT TURF</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">
+                High-friction shock-absorbing athletic turf for heavy sled pushes, farmer walks, plyometric boxes, and battle rope intervals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROTOCOL TIMETABLE MATRIX ================= -->
+    <section class="section-spacing">
+      <div class="container-custom">
+        <div class="text-center mb-5" style="max-width: 650px; margin: 0 auto;">
+          <span class="mono-tag mb-2">WEEKLY COHORT CADENCE</span>
+          <h2 class="section-title mb-3">SCHEDULED COHORT SESSIONS</h2>
+          <p class="text-silver">Floor is open 24/7 for independent training. Guided cohort sessions operate on the following schedule:</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">TIME WINDOW</th>
+                <th scope="col">MON / WED / FRI</th>
+                <th scope="col">TUE / THU</th>
+                <th scope="col">SATURDAY</th>
+                <th scope="col">SUNDAY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>06:30 – 07:45</strong></td>
+                <td><span class="text-lime fw-bold">Hypertrophy Block A</span></td>
+                <td>MetCon Conditioning</td>
+                <td>Open Olympic Arena</td>
+                <td>Bio-Thermal Reset</td>
+              </tr>
+              <tr>
+                <td><strong>08:30 – 09:30</strong></td>
+                <td>MetCon Conditioning</td>
+                <td>Tactical Striking</td>
+                <td>Endurance Protocol</td>
+                <td>Mobility Lab</td>
+              </tr>
+              <tr>
+                <td><strong>12:00 – 13:00</strong></td>
+                <td>Executive Strength</td>
+                <td>Executive MetCon</td>
+                <td>Coaches Workshop</td>
+                <td>Open Floor</td>
+              </tr>
+              <tr>
+                <td><strong>17:30 – 18:45</strong></td>
+                <td><span class="text-lime fw-bold">Hypertrophy Block B</span></td>
+                <td>MetCon Threshold</td>
+                <td>Open Floor</td>
+                <td>Thermal Flush</td>
+              </tr>
+              <tr>
+                <td><strong>19:00 – 20:00</strong></td>
+                <td>Tactical Striking</td>
+                <td>Kinetic Calisthenics</td>
+                <td>Private Cohort</td>
+                <td>Bio-Thermal Reset</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container-custom footer-top">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6 footer-brand">
+          <img src="assets/images/logo.svg" alt="Dark Matter Elite Fitness" width="220" class="mb-3">
+          <p>An uncompromising athletic architecture engineered for high-performance hypertrophy, biomechanical longevity, and thermal bio-recovery.</p>
+          <div class="mt-4">
+            <div class="status-beacon">
+              <span class="beacon-dot"></span>
+              <span>BIOMETRIC ACCESS: OPERATIONAL 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Training Protocols</a></li>
+            <li><a href="membership.html">Membership Plans</a></li>
+            <li><a href="trainers.html">Master Coaches</a></li>
+            <li><a href="about.html">Ethos & Gallery</a></li>
+            <li><a href="contact.html">Contact & Join</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">HEADQUARTERS</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>400 Obsidian Boulevard, District 7, Metropolis, NY 10001</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Direct Concierge: +1 (555) 019-8234</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Staffed Hours: 06:00 – 22:00 Daily<br>Member Access: 24/7 Unrestricted</span>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">INTEL DISPATCH</h4>
+          <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1rem;">Receive monthly protocol breakdowns, guest coaching lectures, and facility updates.</p>
+          <form class="newsletter-form" novalidate>
+            <div class="d-flex flex-column gap-2">
+              <input type="email" class="form-control-dm" placeholder="athlete@domain.com" required aria-label="Email address for dispatch">
+              <button type="submit" class="btn-dm btn-lime btn-sm">
+                <span>TRANSMIT BRIEFING</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-custom">
+      <div class="footer-bottom">
+        <div>© 2026 DARK MATTER ELITE FITNESS. ALL RIGHTS RESERVED. // PHASE 1 FRONTEND PROTOTYPE.</div>
+        <div class="d-flex gap-4">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Biometric Terms</a>
+          <a href="#">Facility Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: PROTOCOL INSPECTION ================= -->
+  <div id="protocolModal" class="dm-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalProtoTitle">
+    <div class="dm-modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span id="modalProtoCategory" class="mono-tag mb-1">STRENGTH // HEAVY IRON</span>
+          <h3 id="modalProtoTitle" class="modal-title">PROTOCOL SPECIFICATION</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3 mb-4">
+          <div class="col-6">
+            <div class="p-2" style="background: var(--bg-card); border: 1px solid var(--border-metallic);">
+              <span class="metric-label">INTENSITY RATING</span>
+              <div id="modalProtoIntensity" class="fw-bold text-lime mt-1">5 / 5 [EXTREME LOAD]</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-2" style="background: var(--bg-card); border: 1px solid var(--border-metallic);">
+              <span class="metric-label">SESSION LENGTH</span>
+              <div id="modalProtoDuration" class="fw-bold text-white mt-1">75 Minutes</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-2" style="background: var(--bg-card); border: 1px solid var(--border-metallic);">
+              <span class="metric-label">ESTIMATED BURN</span>
+              <div id="modalProtoCalories" class="fw-bold text-white mt-1">650 – 850 kcal</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-2" style="background: var(--bg-card); border: 1px solid var(--border-metallic);">
+              <span class="metric-label">COACHING STRUCTURE</span>
+              <div id="modalProtoRatio" class="fw-bold text-white mt-1">1 Coach : 6 Athletes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <h4 class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em;">TARGET ADAPTATION:</h4>
+          <p id="modalProtoAdaptation" class="text-silver" style="font-size: 0.92rem;"></p>
+        </div>
+
+        <div class="mb-3">
+          <h4 class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em;">STATIONS & GEAR:</h4>
+          <p id="modalProtoStations" class="text-muted" style="font-size: 0.9rem;"></p>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em;">RECOMMENDED CADENCE:</h4>
+          <p id="modalProtoCadence" class="text-silver" style="font-size: 0.92rem;"></p>
+        </div>
+
+        <div class="d-flex gap-3">
+          <a href="membership.html" class="btn-dm btn-lime flex-grow-1">
+            <span>ENROLL IN MEMBERSHIP</span>
+          </a>
+          <button type="button" class="btn-dm btn-metallic" data-close-modal data-open-modal="quickPassModal">
+            <span>GET TRIAL PASS</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Quick VIP Pass Modal -->
+  <div id="quickPassModal" class="dm-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="qpModalTitle">
+    <div class="dm-modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="mono-tag mb-1">COMPLIMENTARY ACCESS</span>
+          <h3 id="qpModalTitle" class="modal-title">CLAIM 1-DAY TRIAL PASS</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="quickPassAlert" class="form-alert-banner"></div>
+        <form id="quickPassForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="qpName">Full Name <span class="req">*</span></label>
+            <input type="text" id="qpName" class="form-control-dm" placeholder="Alex Morgan" required>
+            <div class="invalid-feedback-msg">Please provide your full legal name.</div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpEmail">Email Address <span class="req">*</span></label>
+                <input type="email" id="qpEmail" class="form-control-dm" placeholder="alex@domain.com" required>
+                <div class="invalid-feedback-msg">Valid email required for pass generation.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="qpPhone">Mobile Number <span class="req">*</span></label>
+                <input type="tel" id="qpPhone" class="form-control-dm" placeholder="+1 (555) 000-0000" required>
+                <div class="invalid-feedback-msg">Mobile number required for SMS bypass code.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="qpAgree" required>
+              <span>I acknowledge Dark Matter is an elite training facility and agree to facility safety guidelines and demo code issuance.</span>
+            </label>
+            <div class="invalid-feedback-msg">You must accept the safety guidelines.</div>
+          </div>
+          <button type="submit" class="btn-dm btn-lime w-100 mt-3">
+            <span>GENERATE DEMO PASS CODE</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container Placeholder -->
+  <div class="dm-toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/programs.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
