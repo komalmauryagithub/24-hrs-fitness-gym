@@ -70,7 +70,7 @@ require_once __DIR__ . '/includes/header.php';
     <!-- ================= HERO SECTION ================= -->
     <section class="hero-section">
       <div class="hero-bg-media">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" alt="24HRS Fitness modern gym floor with calibrated weights and lighting">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop" alt="24HRS Fitness modern gym floor with calibrated weights and lighting" fetchpriority="high" loading="eager">
       </div>
       <div class="hero-overlay"></div>
 
