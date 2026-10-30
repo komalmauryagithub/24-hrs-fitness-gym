@@ -95,7 +95,7 @@ $siteWhatsapp = $settings['whatsapp_number'] ?? '919920120785';
 
     <div class="container-custom">
       <div class="footer-bottom">
-        <div id="footerCopyright" style="cursor: pointer; user-select: none;">
+        <div id="footerCopyright" style="cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: manipulation;">
           &copy; <?= date('Y') ?> 24HRS FITNESS. ALL RIGHTS RESERVED.
         </div>
         <div class="d-flex gap-4">
@@ -123,9 +123,9 @@ $siteWhatsapp = $settings['whatsapp_number'] ?? '919920120785';
   <!-- Toast Notification Container Placeholder -->
   <div class="dm-toast-container" aria-live="polite"></div>
 
-  <!-- Core Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/forms.js"></script>
+  <!-- Core Scripts with Cache-Busting -->
+  <script src="js/main.js?v=<?= filemtime(__DIR__ . '/../js/main.js') ?>"></script>
+  <script src="js/forms.js?v=<?= filemtime(__DIR__ . '/../js/forms.js') ?>"></script>
   <?php if (isset($extraScripts) && is_array($extraScripts)): ?>
     <?php foreach ($extraScripts as $script): ?>
       <script src="<?= e($script) ?>"></script>

@@ -363,86 +363,87 @@ function initTrainerFilter() {
 /**
  * Secret Admin Portal Access Triggers:
  * 1. Triple-Tap on Brand Logo: Tap 3 times quickly to redirect to admin login.
- * 2. Long-Press on Footer Copyright: Press & hold for 1.5 seconds to redirect to admin login.
+ * 2. Long-Press on Footer Copyright: Press & hold for 1.2 seconds to redirect to admin login.
  */
 function initSecretAdminTriggers() {
-  // 1. Triple Tap on Logo (Desktop Header Logo + Mobile Drawer Logo)
-  const logos = document.querySelectorAll('.brand-logo, .brand-logo img, .mobile-drawer img, .footer-brand img');
-  let tapCount = 0;
-  let tapTimer = null;
+  // 1. TRIPLE TAP ON LOGO
+  let logoTaps = 0;
+  let logoTimer = null;
 
-  logos.forEach(logo => {
-    logo.style.cursor = 'pointer';
+  const handleLogoTap = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-    logo.addEventListener('click', (e) => {
-      tapCount++;
-      clearTimeout(tapTimer);
+    logoTaps++;
+    clearTimeout(logoTimer);
 
-      if (tapCount === 1) {
-        // Start 800ms window for 3 taps; don't preventDefault so normal click still works
-        tapTimer = setTimeout(() => {
-          tapCount = 0;
-        }, 800);
-      } else if (tapCount === 2) {
-        // 2nd tap detected, prevent navigation so 3rd tap can register
-        e.preventDefault();
-        tapTimer = setTimeout(() => {
-          tapCount = 0;
-        }, 800);
-      } else if (tapCount >= 3) {
-        // 3rd TAP DETECTED!
-        e.preventDefault();
-        e.stopPropagation();
-        clearTimeout(tapTimer);
-        tapCount = 0;
-
-        if (window.showToast) {
-          window.showToast('ADMIN ACCESS', 'Secret gesture recognized. Opening Admin Portal...');
-        }
-        setTimeout(() => {
-          window.location.href = 'admin/login.php';
-        }, 350);
-        return false;
+    if (logoTaps >= 3) {
+      logoTaps = 0;
+      if (window.showToast) {
+        window.showToast('ADMIN ACCESS', 'Secret gesture recognized! Opening Admin Portal...');
       }
-    });
+      setTimeout(() => {
+        window.location.href = 'admin/login.php';
+      }, 250);
+      return false;
+    }
+
+    logoTimer = setTimeout(() => {
+      if (logoTaps === 1) {
+        // Single tap: normal navigation to home page
+        window.location.href = 'index.php';
+      }
+      logoTaps = 0;
+    }, 450);
+  };
+
+  const logoEls = document.querySelectorAll('#mainBrandLogo, .brand-logo, .drawer-brand-logo, .footer-brand img');
+  logoEls.forEach(el => {
+    el.style.touchAction = 'manipulation';
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', handleLogoTap);
   });
 
-  // 2. Long Press on Footer Copyright Text (1.5 seconds hold)
+  // 2. LONG PRESS ON FOOTER COPYRIGHT (1.2 seconds hold)
   const copyrightEl = document.getElementById('footerCopyright') || document.querySelector('.footer-bottom div:first-child');
   if (copyrightEl) {
     let pressTimer = null;
+    let isTriggered = false;
 
-    const startPress = () => {
-      copyrightEl.style.transition = 'color 0.3s ease, text-shadow 0.3s ease';
-      copyrightEl.style.color = 'var(--dm-lime, #00E5FF)';
-      copyrightEl.style.textShadow = '0 0 10px rgba(0, 229, 255, 0.7)';
+    const startLongPress = () => {
+      isTriggered = false;
+      copyrightEl.style.transition = 'all 0.25s ease';
+      copyrightEl.style.color = '#00E5FF';
+      copyrightEl.style.textShadow = '0 0 15px rgba(0, 229, 255, 0.9)';
 
       pressTimer = setTimeout(() => {
+        isTriggered = true;
+        copyrightEl.style.color = '#ffffff';
         if (window.showToast) {
-          window.showToast('STAFF ACCESS', 'Secret gesture recognized. Opening Admin Portal...');
+          window.showToast('STAFF ACCESS', 'Secret gesture recognized! Opening Admin Portal...');
         }
         setTimeout(() => {
           window.location.href = 'admin/login.php';
-        }, 350);
-      }, 1500);
+        }, 250);
+      }, 1200);
     };
 
-    const cancelPress = () => {
+    const cancelLongPress = () => {
       if (pressTimer) {
         clearTimeout(pressTimer);
         pressTimer = null;
       }
-      copyrightEl.style.color = '';
-      copyrightEl.style.textShadow = '';
+      if (!isTriggered) {
+        copyrightEl.style.color = '';
+        copyrightEl.style.textShadow = '';
+      }
     };
 
-    copyrightEl.addEventListener('mousedown', startPress);
-    copyrightEl.addEventListener('mouseup', cancelPress);
-    copyrightEl.addEventListener('mouseleave', cancelPress);
-
-    copyrightEl.addEventListener('touchstart', startPress, { passive: true });
-    copyrightEl.addEventListener('touchend', cancelPress);
-    copyrightEl.addEventListener('touchcancel', cancelPress);
+    copyrightEl.addEventListener('pointerdown', startLongPress);
+    copyrightEl.addEventListener('pointerup', cancelLongPress);
+    copyrightEl.addEventListener('pointercancel', cancelLongPress);
+    copyrightEl.addEventListener('pointerleave', cancelLongPress);
+    copyrightEl.addEventListener('contextmenu', (e) => e.preventDefault());
   }
 }
 

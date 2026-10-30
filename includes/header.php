@@ -71,7 +71,7 @@ $ogImage = $ogImage ?? ($appUrl . '/assets/images/logo.png');
   <!-- ================= SITE HEADER / NAVIGATION ================= -->
   <header class="site-header">
     <div class="container-custom nav-container">
-      <a href="index.php" class="brand-logo" aria-label="24HRS Fitness Home">
+      <a href="index.php" class="brand-logo" id="mainBrandLogo" aria-label="24HRS Fitness Home">
         <img src="assets/images/logo.png" alt="24HRS Fitness Logo" width="190" height="58">
       </a>
 
@@ -112,7 +112,7 @@ $ogImage = $ogImage ?? ($appUrl . '/assets/images/logo.png');
   <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div>
       <div class="d-flex align-items-center justify-content-between mb-4">
-        <img src="assets/images/logo.png" alt="24HRS Fitness" width="180" style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.5));">
+        <img src="assets/images/logo.png" alt="24HRS Fitness" class="drawer-brand-logo" width="180" style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.5)); cursor: pointer;">
         <div class="status-beacon">
           <span class="beacon-dot"></span>
           <span>OPEN 24/7</span>
