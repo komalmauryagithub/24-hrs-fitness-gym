@@ -14,11 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fallback pricing dataset in case database JSON payload is not present
 let PRICING_DATA = {
   monthly: {
+    starter: { price: 1500, note: 'Billed monthly • Cancel anytime' },
+    'pro-fitness': { price: 2500, note: 'Billed monthly • Most popular plan' },
+    'elite-vip': { price: 4500, note: 'Billed monthly • All-inclusive VIP' },
     initiate: { price: 1500, note: 'Billed monthly • Cancel anytime' },
     obsidian: { price: 2500, note: 'Billed monthly • Most popular plan' },
     'black-matter': { price: 4500, note: 'Billed monthly • All-inclusive VIP' }
   },
   annual: {
+    starter: { price: 1200, note: 'Billed annually (₹14,400/yr) • Save 20%' },
+    'pro-fitness': { price: 2000, note: 'Billed annually (₹24,000/yr) • Save 20%' },
+    'elite-vip': { price: 3600, note: 'Billed annually (₹43,200/yr) • Save 20%' },
     initiate: { price: 1200, note: 'Billed annually (₹14,400/yr) • Save 20%' },
     obsidian: { price: 2000, note: 'Billed annually (₹24,000/yr) • Save 20%' },
     'black-matter': { price: 3600, note: 'Billed annually (₹43,200/yr) • Save 20%' }
@@ -26,7 +32,7 @@ let PRICING_DATA = {
 };
 
 let currentBillingCycle = 'monthly';
-let selectedPlanSlug = 'obsidian';
+let selectedPlanSlug = 'pro-fitness';
 
 /**
  * Load Dynamic Pricing Data from server JSON script tag if present
@@ -149,8 +155,8 @@ function initPlanSelectionModal() {
   selectButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      selectedPlanSlug = btn.getAttribute('data-plan') || 'obsidian';
-      const planName = btn.getAttribute('data-plan-name') || 'OBSIDIAN';
+      selectedPlanSlug = btn.getAttribute('data-plan') || 'pro-fitness';
+      const planName = btn.getAttribute('data-plan-name') || 'PRO FITNESS';
       const price = PRICING_DATA[currentBillingCycle][selectedPlanSlug]?.price || 2500;
 
       if (modalPlanTitle) modalPlanTitle.textContent = planName;

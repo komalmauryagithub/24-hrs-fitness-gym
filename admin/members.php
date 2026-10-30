@@ -525,7 +525,7 @@ require_once __DIR__ . '/includes/header.php';
     </a>
     <a href="members.php?tab=payments" class="adm-tab-link <?= $currentTab === 'payments' ? 'active' : '' ?>">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-      <span>Payment History ($<?= number_format($metrics['total_revenue']) ?>)</span>
+      <span>Payment History (₹<?= number_format($metrics['total_revenue']) ?>)</span>
     </a>
     <a href="members.php?tab=attendance" class="adm-tab-link <?= $currentTab === 'attendance' ? 'active' : '' ?>">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
@@ -558,7 +558,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <div class="adm-table-responsive">
-      <table class="adm-table">
+      <table class="adm-table adm-table-members">
         <thead>
           <tr>
             <th>Member ID</th>
@@ -611,7 +611,7 @@ require_once __DIR__ . '/includes/header.php';
                   </span>
                 </td>
                 <td>
-                  <span class="adm-mono text-white fw-bold">$<?= number_format((float) $m['total_paid'], 2) ?></span>
+                  <span class="adm-mono text-white fw-bold">₹<?= number_format((float) $m['total_paid'], 2) ?></span>
                   <div class="text-muted" style="font-size: 0.7rem;"><?= (int) $m['payment_count'] ?> txn(s)</div>
                 </td>
                 <td class="text-end">
@@ -648,7 +648,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- ================= TAB 2: PAYMENT RECORDS ================= -->
   <?php if ($currentTab === 'payments'): ?>
     <div class="adm-table-responsive">
-      <table class="adm-table">
+      <table class="adm-table adm-table-payments">
         <thead>
           <tr>
             <th>Receipt / Txn ID</th>
@@ -683,7 +683,7 @@ require_once __DIR__ . '/includes/header.php';
                   <span class="adm-badge" style="background: rgba(255,255,255,0.06);"><?= e($p['plan_name']) ?></span>
                 </td>
                 <td>
-                  <span class="adm-mono text-white fw-bold" style="font-size: 0.95rem;">$<?= number_format((float) $p['amount'], 2) ?></span>
+                  <span class="adm-mono text-white fw-bold" style="font-size: 0.95rem;">₹<?= number_format((float) $p['amount'], 2) ?></span>
                 </td>
                 <td>
                   <span class="adm-badge" style="background: rgba(0, 229, 255, 0.1); color: var(--adm-lime); border: 1px solid rgba(0, 229, 255, 0.25);">
@@ -722,7 +722,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- ================= TAB 3: FLOOR ATTENDANCE RECORDS ================= -->
   <?php if ($currentTab === 'attendance'): ?>
     <div class="adm-table-responsive">
-      <table class="adm-table">
+      <table class="adm-table adm-table-attendance">
         <thead>
           <tr>
             <th>Entry #</th>
@@ -835,7 +835,7 @@ require_once __DIR__ . '/includes/header.php';
             <label class="adm-label">Membership Plan <span class="text-lime">*</span></label>
             <select name="plan_id" class="adm-select" required>
               <?php foreach ($plans as $p): ?>
-                <option value="<?= (int) $p['id'] ?>"><?= e($p['name']) ?> ($<?= (int)$p['monthly_price'] ?>/mo)</option>
+                <option value="<?= (int) $p['id'] ?>"><?= e($p['name']) ?> (₹<?= (int)$p['monthly_price'] ?>/mo)</option>
               <?php endforeach; ?>
             </select>
           </div>
@@ -885,8 +885,8 @@ require_once __DIR__ . '/includes/header.php';
           </div>
           <div class="adm-grid adm-grid-2">
             <div>
-              <label class="adm-label" style="font-size: 0.75rem;">Payment Amount ($)</label>
-              <input type="number" step="0.01" name="initial_payment_amount" class="adm-input" placeholder="e.g. 99.00">
+              <label class="adm-label" style="font-size: 0.75rem;">Payment Amount (₹)</label>
+              <input type="number" step="0.01" name="initial_payment_amount" class="adm-input" placeholder="e.g. 2500.00">
             </div>
             <div>
               <label class="adm-label" style="font-size: 0.75rem;">Payment Method</label>
@@ -950,7 +950,7 @@ require_once __DIR__ . '/includes/header.php';
             <label class="adm-label">Membership Plan <span class="text-lime">*</span></label>
             <select id="editPlanId" name="plan_id" class="adm-select" required>
               <?php foreach ($plans as $p): ?>
-                <option value="<?= (int) $p['id'] ?>"><?= e($p['name']) ?> ($<?= (int)$p['monthly_price'] ?>/mo)</option>
+                <option value="<?= (int) $p['id'] ?>"><?= e($p['name']) ?> (₹<?= (int)$p['monthly_price'] ?>/mo)</option>
               <?php endforeach; ?>
             </select>
           </div>
@@ -1076,8 +1076,8 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="adm-grid adm-grid-2 mb-3">
           <div class="adm-form-group">
-            <label class="adm-label">Amount ($) <span class="text-lime">*</span></label>
-            <input type="number" step="0.01" name="amount" class="adm-input" placeholder="e.g. 99.00" required>
+            <label class="adm-label">Amount (₹) <span class="text-lime">*</span></label>
+            <input type="number" step="0.01" name="amount" class="adm-input" placeholder="e.g. 2500.00" required>
           </div>
           <div class="adm-form-group">
             <label class="adm-label">Payment Method</label>

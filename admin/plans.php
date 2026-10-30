@@ -272,12 +272,12 @@ require_once __DIR__ . '/includes/header.php';
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
         <div>
-          <label class="adm-label" for="monthly_price">Monthly Price ($) *</label>
-          <input type="number" step="0.01" min="0" id="monthly_price" name="monthly_price" class="adm-input" required placeholder="99.00" value="<?= e($planData['monthly_price'] ?? '') ?>">
+          <label class="adm-label" for="monthly_price">Monthly Price (₹) *</label>
+          <input type="number" step="0.01" min="0" id="monthly_price" name="monthly_price" class="adm-input" required placeholder="2500.00" value="<?= e($planData['monthly_price'] ?? '') ?>">
         </div>
         <div>
-          <label class="adm-label" for="annual_monthly_price">Annual Price per Month ($)</label>
-          <input type="number" step="0.01" min="0" id="annual_monthly_price" name="annual_monthly_price" class="adm-input" placeholder="79.00" value="<?= e($planData['annual_monthly_price'] ?? '') ?>">
+          <label class="adm-label" for="annual_monthly_price">Annual Price per Month (₹)</label>
+          <input type="number" step="0.01" min="0" id="annual_monthly_price" name="annual_monthly_price" class="adm-input" placeholder="2000.00" value="<?= e($planData['annual_monthly_price'] ?? '') ?>">
         </div>
       </div>
 
@@ -349,7 +349,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   <?php else: ?>
     <div class="adm-table-container">
-      <table class="adm-table">
+      <table class="adm-table adm-table-plans">
         <thead>
           <tr>
             <th>Order</th>
@@ -376,10 +376,10 @@ require_once __DIR__ . '/includes/header.php';
                 <?= e($p['slug']) ?>
               </td>
               <td style="font-family: var(--adm-font-mono); font-weight: 700; color: var(--adm-lime);">
-                $<?= number_format((float)$p['monthly_price'], 2) ?>
+                ₹<?= number_format((float)$p['monthly_price'], 2) ?>
               </td>
               <td style="font-family: var(--adm-font-mono); color: var(--adm-silver);">
-                $<?= number_format((float)$p['annual_monthly_price'], 2) ?>
+                ₹<?= number_format((float)$p['annual_monthly_price'], 2) ?>
               </td>
               <td>
                 <form method="POST" action="plans.php" style="display: inline;">

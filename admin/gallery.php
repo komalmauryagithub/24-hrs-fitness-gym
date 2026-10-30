@@ -304,7 +304,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   <?php else: ?>
     <div class="adm-table-container">
-      <table class="adm-table">
+      <table class="adm-table adm-table-gallery">
         <thead>
           <tr>
             <th>Photo Preview</th>

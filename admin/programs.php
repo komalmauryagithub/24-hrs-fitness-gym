@@ -389,7 +389,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   <?php else: ?>
     <div class="adm-table-container">
-      <table class="adm-table">
+      <table class="adm-table adm-table-programs">
         <thead>
           <tr>
             <th>Photo</th>

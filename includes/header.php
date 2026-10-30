@@ -136,8 +136,11 @@ $ogImage = $ogImage ?? ($appUrl . '/assets/images/logo.png');
       <a href="contact.php" class="btn-dm btn-metallic w-100">
         <span>Book Gym Tour</span>
       </a>
-      <div class="text-center text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">
-        24HRS FITNESS • OPEN 24 HOURS
+      <div class="d-flex justify-content-between align-items-center pt-2" style="border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; font-family: var(--font-mono);">
+        <span class="text-muted">OPEN 24 HOURS</span>
+        <a href="admin/login.php" style="color: var(--dm-silver); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          <span style="color: var(--dm-lime);">&bull;</span> Staff / Admin Login
+        </a>
       </div>
     </div>
   </aside>

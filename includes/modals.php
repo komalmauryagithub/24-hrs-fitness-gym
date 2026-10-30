@@ -75,15 +75,15 @@ use DarkMatter\Security;
       <div class="modal-header">
         <div>
           <span class="mono-tag mb-1">JOIN 24HRS FITNESS</span>
-          <h3 id="modalSelectedPlan" class="modal-title">STANDARD PLAN</h3>
+          <h3 id="modalSelectedPlan" class="modal-title">PRO FITNESS</h3>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close modal">✕</button>
       </div>
       <div class="modal-body">
         <div class="d-flex justify-content-between align-items-center p-3 mb-4" style="background: rgba(0, 229, 255, 0.06); border: 1px solid var(--lime-border);">
           <div>
-            <div id="modalPlanPrice" class="fw-bold text-white" style="font-size: 1.4rem; font-family: var(--font-display);">$99 / month</div>
-            <div id="modalBillingCycle" class="text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">Billed monthly • Cancel anytime</div>
+            <div id="modalPlanPrice" class="fw-bold text-white" style="font-size: 1.4rem; font-family: var(--font-display);">₹2,500 / month</div>
+            <div id="modalBillingCycle" class="text-muted" style="font-size: 0.8rem; font-family: var(--font-mono);">Billed monthly • Most popular plan</div>
           </div>
           <span class="discount-badge">NO JOINING FEE</span>
         </div>
@@ -94,7 +94,7 @@ use DarkMatter\Security;
           <?= Security::csrfField() ?>
           <!-- Anti-bot honeypot -->
           <input type="text" name="dm_telemetry_check" style="display:none !important;" tabindex="-1" autocomplete="off">
-          <input type="hidden" id="modalPlanSlugInput" name="plan_slug" value="standard">
+          <input type="hidden" id="modalPlanSlugInput" name="plan_slug" value="pro-fitness">
           <input type="hidden" id="modalBillingCycleInput" name="billing_cycle" value="monthly">
 
           <div class="form-group">
@@ -132,8 +132,8 @@ use DarkMatter\Security;
               <div class="form-group">
                 <label class="form-label" for="mbrLocation">Gym Branch <span class="req">*</span></label>
                 <select id="mbrLocation" name="location" class="form-control-dm" required>
-                  <option value="Main Branch (400 Obsidian Blvd)">Main Branch (400 Obsidian Blvd)</option>
-                  <option value="Downtown Club">Downtown Club (City Center)</option>
+                  <option value="Andheri West (Main Club & Flagship)">Andheri West (Main Club & Flagship)</option>
+                  <option value="Bandra West (Elite Training Center)">Bandra West (Elite Training Center)</option>
                 </select>
               </div>
             </div>
@@ -247,25 +247,37 @@ use DarkMatter\Security;
           </div>
         </div>
 
-        <h4 id="successAthleteName" class="text-white mb-1" style="font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em;">Rahul Sharma</h4>
+        <h4 id="successAthleteName" class="text-white mb-1" style="font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em;">—</h4>
         <div class="text-muted mb-3" style="font-size: 0.85rem;">Your membership application has been received successfully!</div>
 
         <div class="p-3 mb-4 text-start" style="background: #080909; border: 1px solid var(--dm-border); border-radius: 6px;">
           <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom" style="border-color: var(--dm-border) !important;">
             <span class="text-muted" style="font-size: 0.78rem; font-family: var(--font-mono);">MEMBERSHIP ID</span>
-            <span id="successMemberId" class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 1.1rem; letter-spacing: 0.08em;">DM-2026-0042</span>
+            <span id="successMemberId" class="text-lime fw-bold" style="font-family: var(--font-mono); font-size: 1.1rem; letter-spacing: 0.08em;">—</span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="text-muted" style="font-size: 0.8rem;">Selected Plan:</span>
-            <span id="successPlanName" class="text-white fw-bold">STANDARD PLAN</span>
+            <span id="successPlanName" class="text-white fw-bold">—</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="text-muted" style="font-size: 0.8rem;">Contact Phone:</span>
+            <span id="successPhone" class="text-white">—</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="text-muted" style="font-size: 0.8rem;">Gym Branch:</span>
+            <span id="successBranch" class="text-white">—</span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="text-muted" style="font-size: 0.8rem;">Joining Date:</span>
-            <span id="successStartDate" class="text-white">2026-04-15</span>
+            <span id="successStartDate" class="text-white">—</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="text-muted" style="font-size: 0.8rem;">Amount Payable:</span>
+            <span id="successAmount" class="text-lime fw-bold">—</span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="text-muted" style="font-size: 0.8rem;">Payment:</span>
-            <span id="successPaymentStatus" class="badge-mini lime">CONFIRMED</span>
+            <span id="successPaymentStatus" class="badge-mini lime">PENDING</span>
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <span class="text-muted" style="font-size: 0.8rem;">Gym Access:</span>

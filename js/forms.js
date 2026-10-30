@@ -707,15 +707,29 @@ function initMembershipCheckoutForm() {
         const athleteEl = document.getElementById('successAthleteName');
         const idEl = document.getElementById('successMemberId');
         const planEl = document.getElementById('successPlanName');
+        const phoneEl = document.getElementById('successPhone');
+        const branchEl = document.getElementById('successBranch');
         const dateEl = document.getElementById('successStartDate');
+        const amountEl = document.getElementById('successAmount');
         const statusEl = document.getElementById('successPaymentStatus');
         const waBtn = document.getElementById('successWaBtn');
 
         const memberId = result.data?.membership_code || 'PENDING';
-        if (athleteEl) athleteEl.textContent = result.data?.applicant_name || payload.full_name;
+        const applicantName = result.data?.applicant_name || payload.full_name || 'Member';
+        const planName = result.data?.plan_name || 'GYM MEMBERSHIP';
+        const phoneVal = result.data?.phone || payload.phone || '—';
+        const branchVal = result.data?.location || payload.location || 'Andheri West (Main Club)';
+        const startDateVal = result.data?.preferred_start_date || payload.preferred_start_date || 'Immediate';
+        const rawAmount = result.data?.amount_total || result.data?.amount_monthly || 0;
+        const formattedAmount = rawAmount ? `₹${Number(rawAmount).toLocaleString('en-IN')}` : 'Pay at Counter';
+
+        if (athleteEl) athleteEl.textContent = applicantName;
         if (idEl) idEl.textContent = memberId;
-        if (planEl) planEl.textContent = result.data?.plan_name || 'GYM MEMBERSHIP';
-        if (dateEl) dateEl.textContent = result.data?.preferred_start_date || payload.preferred_start_date;
+        if (planEl) planEl.textContent = planName;
+        if (phoneEl) phoneEl.textContent = phoneVal;
+        if (branchEl) branchEl.textContent = branchVal;
+        if (dateEl) dateEl.textContent = startDateVal;
+        if (amountEl) amountEl.textContent = formattedAmount;
 
         if (statusEl) {
           if (result.data?.is_paid) {
@@ -728,7 +742,7 @@ function initMembershipCheckoutForm() {
         }
 
         if (waBtn) {
-          const waText = encodeURIComponent(`Hello 24HRS FITNESS! I have completed my membership application for ${result.data?.plan_name || 'Gym Membership'}. My Member ID is ${memberId}.`);
+          const waText = encodeURIComponent(`Hello 24HRS FITNESS! I have registered for the ${planName} plan at ${branchVal}. My Member ID is ${memberId} (${applicantName}).`);
           waBtn.href = `https://wa.me/919920120785?text=${waText}`;
         }
 

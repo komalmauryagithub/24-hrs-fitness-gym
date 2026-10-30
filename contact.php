@@ -25,10 +25,10 @@ try {
     $settings = [];
 }
 
-$siteAddress = $settings['address'] ?? 'Plot 42, Main Commercial Avenue, City Center, Mumbai, MH 400001';
+$siteAddress = $settings['address'] ?? 'Plot 42, Commercial Avenue, Opp. Metro Station, Andheri West, Mumbai, MH 400053';
 $sitePhone = $settings['contact_phone'] ?? '+91 99201 20785';
 $siteEmail = $settings['contact_email'] ?? 'info@fitnessgym.com';
-$geoCoords = $settings['geo_coordinates'] ?? '19.0760° N, 72.8777° E';
+$geoCoords = $settings['geo_coordinates'] ?? '19.1136° N, 72.8697° E';
 $waNumber = $settings['whatsapp_number'] ?? '919920120785';
 
 require_once __DIR__ . '/includes/header.php';
@@ -119,7 +119,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="position-relative" style="height: 250px; background: #07090A; overflow: hidden;">
                   <iframe 
                     title="24HRS Fitness Location Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25436351647!2d-74.11976373099557!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1714000000000!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?q=Andheri+West,+Mumbai,+Maharashtra&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     width="100%" 
                     height="100%" 
                     style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.1) brightness(0.85);" 
@@ -203,8 +203,8 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="form-group">
                       <label class="form-label" for="contactLocation">Gym Branch <span class="req">*</span></label>
                       <select id="contactLocation" name="location" class="form-control-dm" required>
-                        <option value="Main Branch — City Center">Main Branch — City Center</option>
-                        <option value="West Branch — Commercial Hub">West Branch — Commercial Hub</option>
+                        <option value="Andheri West (Main Club & Flagship)">Andheri West (Main Club & Flagship)</option>
+                        <option value="Bandra West (Elite Training Center)">Bandra West (Elite Training Center)</option>
                       </select>
                     </div>
                   </div>

@@ -22,7 +22,7 @@ try {
     $settings = [];
 }
 
-$siteAddress = $settings['address'] ?? 'Plot 42, Main Commercial Avenue, City Center, Mumbai, MH 400001';
+$siteAddress = $settings['address'] ?? 'Plot 42, Commercial Avenue, Opp. Metro Station, Andheri West, Mumbai, MH 400053';
 $sitePhone = $settings['contact_phone'] ?? '+91 99201 20785';
 $siteEmail = $settings['contact_email'] ?? 'contact@24hrsfitness.com';
 $siteWhatsapp = $settings['whatsapp_number'] ?? '919920120785';

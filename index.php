@@ -114,28 +114,28 @@ require_once __DIR__ . '/includes/header.php';
         <div class="hero-stats-strip reveal-init delay-4">
           <div class="stat-item">
             <div class="stat-number">
-              <span class="counter-val" data-target="25000">0</span>
+              <span class="counter-val" data-target="25000">25,000</span>
               <span class="stat-suffix">SQ FT</span>
             </div>
             <div class="stat-label">SPACIOUS GYM FLOOR</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">
-              <span class="counter-val" data-target="100">0</span>
+              <span class="counter-val" data-target="100">100</span>
               <span class="stat-suffix">+</span>
             </div>
             <div class="stat-label">MODERN FITNESS MACHINES</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">
-              <span class="counter-val" data-target="98">0</span>
+              <span class="counter-val" data-target="98">98</span>
               <span class="stat-suffix">%</span>
             </div>
             <div class="stat-label">MEMBER SATISFACTION</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">
-              <span class="counter-val" data-target="24">0</span>
+              <span class="counter-val" data-target="24">24</span>
               <span class="stat-suffix">/ 7</span>
             </div>
             <div class="stat-label">OPEN DAY & NIGHT</div>
@@ -457,15 +457,15 @@ require_once __DIR__ . '/includes/header.php';
                 <span>★★★★★</span>
               </div>
               <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
-                "I have trained at many gyms over the years, but 24HRS FITNESS is hands down the best. Clean equipment, great music, and friendly staff who actually care about your progress."
+                "I've trained at several gyms across Mumbai, but 24HRS FITNESS is on another level. The Olympic barbell platforms, dumbbells up to 50kg, and motivating environment pushed my deadlift from 140kg to 210kg."
               </p>
               <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
                 <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Julian Richter" width="44" height="44" style="object-fit: cover;">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Vikram Malhotra" width="44" height="44" style="object-fit: cover;">
                 </div>
                 <div>
-                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">JULIAN RICHTER</div>
-                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • GAINED 10KG MUSCLE</div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">VIKRAM MALHOTRA</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • GAINED 8KG LEAN MUSCLE</div>
                 </div>
               </div>
             </div>
@@ -477,15 +477,15 @@ require_once __DIR__ . '/includes/header.php';
                 <span>★★★★★</span>
               </div>
               <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
-                "The personal training and steam rooms are fantastic. My trainer created a custom fat-loss plan that helped me drop 12 kg in 4 months without starving."
+                "The trainers here actually care about your form and progress. Coupled with clean steam recovery rooms and personalized diet advice, I dropped 14 kg in 5 months with consistent energy throughout the day."
               </p>
               <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
                 <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Tara Sterling" width="44" height="44" style="object-fit: cover;">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" alt="Ananya Deshmukh" width="44" height="44" style="object-fit: cover;">
                 </div>
                 <div>
-                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">TARA STERLING</div>
-                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • LOST 12 KG</div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">ANANYA DESHMUKH</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • LOST 14 KG & TONED</div>
                 </div>
               </div>
             </div>
@@ -497,15 +497,15 @@ require_once __DIR__ . '/includes/header.php';
                 <span>★★★★★</span>
               </div>
               <p class="text-silver mb-4" style="font-size: 0.98rem; font-style: italic;">
-                "Being open 24 hours is a lifesaver for my busy schedule. Whether I come at 6 AM or 10 PM, the gym is spotless, well air-conditioned, and ready for a great workout."
+                "Working late night shifts in tech made consistent workouts impossible until I joined 24HRS FITNESS. It is genuinely open 24/7, extremely safe with biometric entry, fully air-conditioned, and spotlessly maintained."
               </p>
               <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top" style="border-color: var(--border-metallic) !important;">
                 <div style="width: 44px; height: 44px; background: #222; border: 1px solid var(--lime-border); border-radius: 50%; overflow: hidden;">
-                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Kaelen Mercer" width="44" height="44" style="object-fit: cover;">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Rohan Mehta" width="44" height="44" style="object-fit: cover;">
                 </div>
                 <div>
-                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">KAELEN MERCER</div>
-                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • REGULAR 5 DAYS/WEEK</div>
+                  <div class="fw-bold text-white" style="font-family: var(--font-display); font-size: 1.1rem;">ROHAN MEHTA</div>
+                  <div class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">MEMBER • 24/7 NIGHT OWL LIFTER</div>
                 </div>
               </div>
             </div>

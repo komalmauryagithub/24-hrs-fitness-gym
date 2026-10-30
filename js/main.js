@@ -146,13 +146,16 @@ function initStatCounters() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const animateCounter = (el) => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+
     const target = parseInt(el.getAttribute('data-target'), 10) || 0;
     if (prefersReduced) {
       el.textContent = target.toLocaleString();
       return;
     }
 
-    const duration = 1800; // ms
+    const duration = 1400; // ms
     const startTime = performance.now();
 
     const update = (currentTime) => {
@@ -173,16 +176,32 @@ function initStatCounters() {
     requestAnimationFrame(update);
   };
 
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(c => animateCounter(c));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting || entry.intersectionRatio > 0) {
         animateCounter(entry.target);
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.25 });
+  }, { 
+    threshold: 0.05,
+    rootMargin: '50px 0px 0px 0px'
+  });
 
-  counters.forEach(c => observer.observe(c));
+  counters.forEach(c => {
+    // Check if element is already within viewport
+    const rect = c.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      animateCounter(c);
+    } else {
+      observer.observe(c);
+    }
+  });
 }
 
 /**

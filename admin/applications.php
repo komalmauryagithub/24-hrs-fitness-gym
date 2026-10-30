@@ -255,7 +255,7 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 <?php else: ?>
   <div class="adm-table-container">
-    <table class="adm-table">
+    <table class="adm-table adm-table-applications">
       <thead>
         <tr>
           <th>Application ID</th>
@@ -297,7 +297,7 @@ require_once __DIR__ . '/includes/header.php';
               </span>
             </td>
             <td style="font-family: var(--adm-font-mono); font-weight: 700; color: var(--adm-lime);">
-              $<?= number_format((float)$app['amount_monthly'], 2) ?>/mo
+              ₹<?= number_format((float)$app['amount_monthly'], 2) ?>/mo
             </td>
             <td>
               <form method="POST" action="applications.php" style="margin: 0;">
@@ -434,7 +434,7 @@ function viewAppDetails(data) {
         <div>
           <div class="adm-label" style="color: var(--adm-lime);">Monthly Price</div>
           <div style="font-family: var(--adm-font-mono); font-size: 1.2rem; color: var(--adm-lime); font-weight: 700;">
-            $${parseFloat(data.amount_monthly).toFixed(2)} / month
+            ₹${parseFloat(data.amount_monthly).toFixed(2)} / month
           </div>
         </div>
       </div>

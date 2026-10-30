@@ -568,23 +568,60 @@ a:hover {
   font-size: 0.78rem;
 }
 
-/* Tables */
-.adm-table-container {
+/* Tables & Horizontal Scroll Container */
+.adm-table-container,
+.adm-table-responsive {
+  width: 100%;
+  max-width: 100%;
   background-color: var(--adm-surface);
   border: 1px solid var(--adm-border);
-  overflow-x: auto;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 1.25rem;
+  position: relative;
+  /* Firefox Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--adm-lime) var(--adm-surface-2);
+}
+
+/* Custom Horizontal Scrollbar for Webkit (Chrome, Edge, Safari, Opera) */
+.adm-table-container::-webkit-scrollbar,
+.adm-table-responsive::-webkit-scrollbar {
+  height: 9px;
+  background: rgba(6, 8, 11, 0.95);
+}
+
+.adm-table-container::-webkit-scrollbar-track,
+.adm-table-responsive::-webkit-scrollbar-track {
+  background: var(--adm-surface-2);
+  border-top: 1px solid var(--adm-border);
+  border-radius: 4px;
+}
+
+.adm-table-container::-webkit-scrollbar-thumb,
+.adm-table-responsive::-webkit-scrollbar-thumb {
+  background: var(--adm-lime);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.adm-table-container::-webkit-scrollbar-thumb:hover,
+.adm-table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #33ecff;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.9);
 }
 
 .adm-table {
   width: 100%;
+  min-width: 950px;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.88rem;
 }
 
 .adm-table th {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.55);
   color: var(--adm-silver);
   font-family: var(--adm-font-mono);
   font-size: 0.72rem;
@@ -600,14 +637,62 @@ a:hover {
   border-bottom: 1px solid var(--adm-border);
   color: var(--adm-white);
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .adm-table tr:hover td {
-  background-color: rgba(0, 229, 255, 0.02);
+  background-color: rgba(0, 229, 255, 0.03);
 }
 
 .adm-table tr:last-child td {
   border-bottom: none;
+}
+
+/* Prevent action buttons or right-side columns from clipping */
+.adm-table th:last-child,
+.adm-table td:last-child,
+.adm-table .text-end {
+  text-align: right;
+  min-width: 130px;
+  white-space: nowrap;
+  padding-right: 1.25rem;
+}
+
+/* Section Specific Min-Widths to Guarantee Clean Horizontal Scroll on Desktop */
+.adm-table-members {
+  min-width: 1100px;
+}
+
+.adm-table-payments {
+  min-width: 1180px;
+}
+
+.adm-table-attendance {
+  min-width: 1050px;
+}
+
+.adm-table-applications {
+  min-width: 1120px;
+}
+
+.adm-table-programs {
+  min-width: 1080px;
+}
+
+.adm-table-gallery {
+  min-width: 980px;
+}
+
+.adm-table-enquiries {
+  min-width: 1000px;
+}
+
+.adm-table-plans {
+  min-width: 1000px;
+}
+
+.adm-table-trainers {
+  min-width: 980px;
 }
 
 /* Status Badges */

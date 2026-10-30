@@ -114,12 +114,12 @@ CREATE TABLE `member_payments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `member_payments` VALUES
-('1', '1', 'TXN-DM-20260115-0981', '2750.00', 'Credit Card', 'completed', '2026-01-15', 'Initial enrollment subscription (annual)', '2026-10-27 13:32:59'),
-('2', '2', 'TXN-DM-20260312-5541', '149.00', 'UPI', 'completed', '2026-09-12', 'Initial enrollment subscription (monthly)', '2026-10-27 13:32:59'),
-('3', '3', 'TXN-DM-20260320-1129', '149.00', 'Credit Card', 'completed', '2026-08-28', 'Initial enrollment subscription (monthly)', '2026-10-27 13:32:59'),
-('4', '4', 'TXN-DM-20260120-7712', '79.00', 'Debit Card', 'completed', '2026-07-29', 'Initial enrollment subscription (monthly)', '2026-10-27 13:32:59'),
-('5', '5', 'TXN-DM-20260401-4409', '289.00', 'UPI', 'completed', '2026-10-30', 'Initial enrollment subscription (monthly)', '2026-10-27 13:32:59'),
-('6', '6', 'TXN-DM-20261027-68ADF0', '2772.00', 'UPI', 'completed', '2026-10-27', 'Instant online checkout [annual protocol]', '2026-10-27 14:06:51');
+('1', '1', 'TXN-DM-20260115-0981', '24000.00', 'Credit Card', 'completed', '2026-01-15', 'Annual subscription [PRO FITNESS plan]', '2026-10-27 13:32:59'),
+('2', '2', 'TXN-DM-20260312-5541', '2500.00', 'UPI', 'completed', '2026-09-12', 'Monthly fee payment [PRO FITNESS plan]', '2026-10-27 13:32:59'),
+('3', '3', 'TXN-DM-20260320-1129', '1500.00', 'Debit Card', 'completed', '2026-08-28', 'Monthly fee payment [STARTER plan]', '2026-10-27 13:32:59'),
+('4', '4', 'TXN-DM-20260120-7712', '1500.00', 'Cash / Reception', 'completed', '2026-07-29', 'Monthly renewal payment [STARTER plan]', '2026-10-27 13:32:59'),
+('5', '5', 'TXN-DM-20260401-4409', '4500.00', 'UPI', 'completed', '2026-10-30', 'Monthly fee payment [ELITE VIP plan]', '2026-10-27 13:32:59'),
+('6', '6', 'TXN-DM-20261027-68ADF0', '43200.00', 'UPI', 'completed', '2026-10-27', 'Instant online checkout [annual ELITE VIP plan]', '2026-10-27 14:06:51');
 
 DROP TABLE IF EXISTS `members`;
 CREATE TABLE `members` (
@@ -149,12 +149,12 @@ CREATE TABLE `members` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `members` VALUES
-('1', 'DM-2026-0101', NULL, 'Alexander Vance', 'a.vance@vanceholdings.com', '+1 (555) 301-4491', '4', 'AUDIT PROTOCOL', 'annual', '2026-01-15', '2027-01-15', 'active', 'Elena Vance (+1 555-301-9988)', 'Executive athlete. Requires biometric locker 14 and post-workout sauna suite reservation.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
-('2', 'DM-2026-0102', NULL, 'Maya Lin Thorne', 'maya.thorne@metrolabs.io', '+1 (555) 782-3901', '3', 'BLACK MATTER', 'monthly', '2026-09-12', '2026-11-11', 'active', 'David Thorne (+1 555-782-3902)', 'Training for hybrid powerlifting competition. Uses 38F cold plunge daily.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
-('3', 'DM-2026-0103', NULL, 'Marcus Sterling', 'sterling.marcus@apexcapital.com', '+1 (555) 234-8877', '3', 'BLACK MATTER', 'monthly', '2026-08-28', '2026-11-26', 'active', 'Sarah Sterling (+1 555-234-8899)', 'Assigned to Coach Viktor Stone for barbell strength progressions.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
-('4', 'DM-2026-0104', NULL, 'Dr. Elena Rostova', 'elena.rostova@neurolink.org', '+1 (555) 891-2245', '2', 'OBSIDIAN', 'monthly', '2026-07-29', '2026-10-22', 'expired', 'Boris Rostov (+1 555-891-2200)', 'Renewal reminder dispatched. Expressed interest in upgrading to Obsidian tier.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
-('5', 'DM-2026-0105', NULL, 'Gabriel Cross', 'g.cross@crossathletics.com', '+1 (555) 412-9018', '4', 'AUDIT PROTOCOL', 'monthly', '2026-10-30', '2026-11-29', 'pending', 'Rachel Cross (+1 555-412-9019)', 'Online application completed. Biometric facial scan scheduled at concierge desk.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
-('6', 'DM-2026-0005', '5', 'Sophia Cross VIP', 'sophia.vip@example.com', '+1 (555) 987-6543', '3', 'BLACK MATTER', 'annual', '2026-10-28', '2027-10-28', 'active', 'Primary: +1 (555) 987-6543', 'Online self-enrollment (UPI) via Dark Matter Portal.', '2026-10-27 14:06:51', '2026-10-27 14:06:51');
+('1', 'DM-2026-0101', NULL, 'Vikram Malhotra', 'vikram.malhotra@gmail.com', '+91 98201 11223', '11', 'PRO FITNESS', 'annual', '2026-01-15', '2027-01-15', 'active', 'Sunita Malhotra (+91 98201 11224)', 'Flagship athlete. Requires biometric locker 14 and post-workout steam sauna access.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
+('2', 'DM-2026-0102', NULL, 'Ananya Deshmukh', 'ananya.deshmukh@gmail.com', '+91 98192 33445', '11', 'PRO FITNESS', 'monthly', '2026-09-12', '2026-11-11', 'active', 'Rajesh Deshmukh (+91 98192 33446)', 'Focusing on strength progressions and cardio stamina.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
+('3', 'DM-2026-0103', NULL, 'Rohan Mehta', 'rohan.mehta@techminds.io', '+91 98334 55667', '10', 'STARTER', 'monthly', '2026-08-28', '2026-11-26', 'active', 'Pooja Mehta (+91 98334 55668)', '24/7 late night workouts. Calisthenics and free weights.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
+('4', 'DM-2026-0104', NULL, 'Dr. Priya Sharma', 'priya.sharma@neurolink.in', '+91 98210 66778', '10', 'STARTER', 'monthly', '2026-07-29', '2026-10-22', 'expired', 'Dr. Amit Sharma (+91 98210 66779)', 'Renewal reminder sent. Interested in upgrading to PRO FITNESS tier.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
+('5', 'DM-2026-0105', NULL, 'Kabir Kapoor', 'kabir.kapoor@kholdings.in', '+91 99302 77889', '12', 'ELITE VIP', 'monthly', '2026-10-25', '2026-11-25', 'active', 'Simran Kapoor (+91 99302 77890)', 'VIP coaching program enrolled. Assigned to senior personal trainer.', '2026-10-27 13:32:59', '2026-10-27 13:32:59'),
+('6', 'DM-2026-0005', '5', 'Neha Verma', 'neha.verma@fashionstudio.com', '+91 99201 88990', '12', 'ELITE VIP', 'annual', '2026-10-28', '2027-10-28', 'active', 'Primary: +91 99201 88990', 'Online self-enrollment (UPI) via 24HRS FITNESS Website.', '2026-10-27 14:06:51', '2026-10-27 14:06:51');
 
 DROP TABLE IF EXISTS `membership_applications`;
 CREATE TABLE `membership_applications` (
@@ -268,8 +268,8 @@ INSERT INTO `site_settings` VALUES
 ('2', 'site_tagline', '24/7 Premium Gym & Physical Fitness Club', 'Brand headline manifesto', '2026-10-27 15:56:36'),
 ('3', 'contact_email', 'contact@24hrsfitness.com', 'Primary concierge email address', '2026-10-27 15:56:36'),
 ('4', 'contact_phone', '+91 99201 20785', 'Primary front desk contact number', '2026-10-27 15:56:36'),
-('5', 'address', 'Plot 42, Main Commercial Avenue, City Center, Mumbai, MH 400001', 'Physical flagship address', '2026-10-27 15:56:36'),
-('6', 'geo_coordinates', '19.0760° N, 72.8777° E', 'Flagship GPS telemetry coordinates', '2026-10-27 15:56:36'),
+('5', 'address', 'Plot 42, Commercial Avenue, Opp. Metro Station, Andheri West, Mumbai, MH 400053', 'Physical flagship address', '2026-10-27 15:56:36'),
+('6', 'geo_coordinates', '19.1136° N, 72.8697° E', 'Flagship GPS telemetry coordinates', '2026-10-27 15:56:36'),
 ('7', 'whatsapp_number', '919920120785', 'Direct encrypted concierge WhatsApp number', '2026-10-27 15:56:36'),
 ('8', 'operating_hours_members', 'Open 24 Hours / 7 Days a Week', 'Member entry schedule', '2026-10-27 15:56:36'),
 ('9', 'operating_hours_staff', '06:00 AM – 10:00 PM Daily', 'Staffed front desk hours', '2026-10-27 15:56:36'),
