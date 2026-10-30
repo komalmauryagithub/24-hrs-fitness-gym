@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initTrainerFilter();
   highlightActiveNavLink();
+  initSecretAdminTriggers();
 });
 
 /**
@@ -357,5 +358,91 @@ function initTrainerFilter() {
       }
     });
   });
+}
+
+/**
+ * Secret Admin Portal Access Triggers:
+ * 1. Triple-Tap on Brand Logo: Tap 3 times quickly to redirect to admin login.
+ * 2. Long-Press on Footer Copyright: Press & hold for 1.5 seconds to redirect to admin login.
+ */
+function initSecretAdminTriggers() {
+  // 1. Triple Tap on Logo (Desktop Header Logo + Mobile Drawer Logo)
+  const logos = document.querySelectorAll('.brand-logo, .brand-logo img, .mobile-drawer img, .footer-brand img');
+  let tapCount = 0;
+  let tapTimer = null;
+
+  logos.forEach(logo => {
+    logo.style.cursor = 'pointer';
+
+    logo.addEventListener('click', (e) => {
+      tapCount++;
+      clearTimeout(tapTimer);
+
+      if (tapCount === 1) {
+        // Start 800ms window for 3 taps; don't preventDefault so normal click still works
+        tapTimer = setTimeout(() => {
+          tapCount = 0;
+        }, 800);
+      } else if (tapCount === 2) {
+        // 2nd tap detected, prevent navigation so 3rd tap can register
+        e.preventDefault();
+        tapTimer = setTimeout(() => {
+          tapCount = 0;
+        }, 800);
+      } else if (tapCount >= 3) {
+        // 3rd TAP DETECTED!
+        e.preventDefault();
+        e.stopPropagation();
+        clearTimeout(tapTimer);
+        tapCount = 0;
+
+        if (window.showToast) {
+          window.showToast('ADMIN ACCESS', 'Secret gesture recognized. Opening Admin Portal...');
+        }
+        setTimeout(() => {
+          window.location.href = 'admin/login.php';
+        }, 350);
+        return false;
+      }
+    });
+  });
+
+  // 2. Long Press on Footer Copyright Text (1.5 seconds hold)
+  const copyrightEl = document.getElementById('footerCopyright') || document.querySelector('.footer-bottom div:first-child');
+  if (copyrightEl) {
+    let pressTimer = null;
+
+    const startPress = () => {
+      copyrightEl.style.transition = 'color 0.3s ease, text-shadow 0.3s ease';
+      copyrightEl.style.color = 'var(--dm-lime, #00E5FF)';
+      copyrightEl.style.textShadow = '0 0 10px rgba(0, 229, 255, 0.7)';
+
+      pressTimer = setTimeout(() => {
+        if (window.showToast) {
+          window.showToast('STAFF ACCESS', 'Secret gesture recognized. Opening Admin Portal...');
+        }
+        setTimeout(() => {
+          window.location.href = 'admin/login.php';
+        }, 350);
+      }, 1500);
+    };
+
+    const cancelPress = () => {
+      if (pressTimer) {
+        clearTimeout(pressTimer);
+        pressTimer = null;
+      }
+      copyrightEl.style.color = '';
+      copyrightEl.style.textShadow = '';
+    };
+
+    copyrightEl.addEventListener('mousedown', startPress);
+    copyrightEl.addEventListener('mouseup', cancelPress);
+    copyrightEl.addEventListener('mouseleave', cancelPress);
+
+    copyrightEl.addEventListener('touchstart', startPress, { passive: true });
+    copyrightEl.addEventListener('touchend', cancelPress);
+    copyrightEl.addEventListener('touchcancel', cancelPress);
+  }
 }
 

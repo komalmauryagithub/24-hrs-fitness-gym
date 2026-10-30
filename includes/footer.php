@@ -95,7 +95,7 @@ $siteWhatsapp = $settings['whatsapp_number'] ?? '919920120785';
 
     <div class="container-custom">
       <div class="footer-bottom">
-        <div>
+        <div id="footerCopyright" style="cursor: pointer; user-select: none;">
           &copy; <?= date('Y') ?> 24HRS FITNESS. ALL RIGHTS RESERVED.
         </div>
         <div class="d-flex gap-4">
